@@ -5,7 +5,19 @@ AI指示書システムを活用して、信頼性の高い調査報告書を効
 
 ## AI指示書システムの使用
 
-タスク開始時は`instructions/ai_instruction_kits/instructions/ja/system/ROOT_INSTRUCTION.md`を読み込んでください。
+タスク開始時は必ず以下の手順に従ってください：
+
+1. **ROOT_INSTRUCTION.mdの読み込み**
+   ```
+   instructions/ai_instruction_kits/instructions/ja/system/ROOT_INSTRUCTION.md
+   ```
+2. **適切な指示書の選択**
+   - プリセット指示書（高速・推奨）
+   - カスタム指示書（特殊要件時）
+3. **チェックポイント管理の開始**
+   ```bash
+   scripts/checkpoint.sh start "タスク名" <ステップ数>
+   ```
 
 ## プロジェクト設定
 
@@ -61,6 +73,32 @@ AI指示書システムを活用して、信頼性の高い調査報告書を効
 - **必須**: `bash scripts/commit.sh "メッセージ"` または `git commit -m "メッセージ"`
 - **禁止**: AI署名付きコミット（自動検出・拒否）
 
+## ワークフロー管理
+
+### 推奨作業手順
+
+1. **タスク開始**
+   ```bash
+   scripts/checkpoint.sh start "調査テーマ" <予想ステップ数>
+   ```
+
+2. **進捗更新**
+   ```bash
+   scripts/checkpoint.sh progress <task-id> <現在> <総数> "現在の状況" "次のステップ"
+   ```
+
+3. **指示書使用記録**
+   ```bash
+   scripts/checkpoint.sh instruction-start "<指示書パス>" "目的" <task-id>
+   # 作業実施
+   scripts/checkpoint.sh instruction-complete "<指示書パス>" "成果" <task-id>
+   ```
+
+4. **タスク完了**
+   ```bash
+   scripts/checkpoint.sh complete <task-id> "成果の概要"
+   ```
+
 ## ビルドコマンド
 
 ```bash
@@ -73,6 +111,14 @@ scripts/build-report.sh pdf reports/report.md
 # 引用チェック
 scripts/check-references.sh reports/report.md
 ```
+
+## 品質管理
+
+### 中間レビュー推奨
+
+- **HTMLプレビュー**: 定期的にHTMLを生成して内容を確認
+- **引用チェック**: 執筆中に随時`check-references.sh`を実行
+- **論理構造確認**: エグゼクティブサマリーと本文の整合性確認
 
 ## プロジェクト固有の追加指示
 
@@ -92,4 +138,29 @@ scripts/check-references.sh reports/report.md
 
 - 引用の正確性を確認
 - 論理的一貫性をチェック
-- 読者視点での分かりやすさを評価 
+- 読者視点での分かりやすさを評価
+
+## 高品質報告書のための追加ガイドライン
+
+### 研究の透明性確保
+
+1. **方法論の明記**
+   - 情報収集の手法と期間
+   - 分析アプローチの選択理由
+   - 制約事項と限界の明示
+
+2. **エビデンスの階層化**
+   - 一次情報源（政府発表、学術論文）を最優先
+   - 二次情報源（調査会社レポート）は補完的に活用
+   - 三次情報源（メディア報道）は参考程度
+
+3. **バイアス対策**
+   - 複数の視点からの情報収集
+   - 対立する見解の公平な記述
+   - 著者の立場や前提の明示
+
+### 継続的改善
+
+- **ピアレビューの活用**: 同僚や専門家による内容チェック
+- **読者フィードバック**: 報告書使用者からの改善提案収集
+- **方法論の更新**: 新しいツールや手法の積極的導入
