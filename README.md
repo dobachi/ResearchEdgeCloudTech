@@ -42,8 +42,8 @@ GitHubで「Use this template」ボタンをクリックして、新しいリポ
 
 ```bash
 # リポジトリをクローン
-git clone https://github.com/あなたのユーザー名/あなたのリポジトリ名.git
-cd あなたのリポジトリ名
+git clone https://github.com/dobachi/ResearchEdgeCloudTech.git
+cd ResearchEdgeCloudTech
 
 # AI指示書システムの初期化
 git submodule update --init --recursive
@@ -181,4 +181,4 @@ scripts/build-report.sh pdf reports/your-report.md
 
 ## サポート
 
-問題が発生した場合は、[Issues](https://github.com/ユーザー名/リポジトリ名/issues)でお知らせください。
+問題が発生した場合は、[Issues](https://github.com/dobachi/ResearchEdgeCloudTech/issues)でお知らせください。
