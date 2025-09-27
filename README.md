@@ -1,44 +1,36 @@
-# 調査報告書テンプレート
+# クラウドエッジ技術研究プロジェクト
 
-AI支援による調査報告書作成のためのGitHubテンプレートリポジトリです。
+AI支援によるクラウドエッジ技術の包括的調査・分析プロジェクトです。IoT、5G/6G、エッジAI、産業IoTなどの最新技術動向を体系的に研究し、日本の産業界における戦略的機会を分析します。
 
 ## 特徴
 
-- 🤖 AI指示書システムによる調査・報告書作成支援
-- 📊 構造化された報告書テンプレート（エグゼクティブサマリ、参考文献を含む）
-- 🔍 信頼性の高い情報源の活用と適切な引用管理
-- 📝 HTML/PDF形式での報告書出力対応
-- 🎯 IT技術、法制度、ソフトウェアプロジェクト等の調査に最適化
+- 🌐 クラウドエッジ技術の体系的分類と市場分析
+- 🤖 AI指示書システムによる高度な技術調査支援
+- 📊 日本産業界の競争優位性分析と戦略提言
+- 🔍 信頼性の高い技術情報源（IEEE、3GPP、ETSI等）の活用
+- 📝 HTML/PDF形式での専門技術報告書出力
+- 🎯 製造業DX、スマートシティ、自動運転分野への特化
 
-## クイックスタート
+## 研究成果
 
-### 🚀 ワンライナーで新しいプロジェクトを作成（推奨）
+### 📄 現在の調査報告書
 
-以下のワンライナーを実行すると、GitHubプライベートリポジトリ付きの新しいプロジェクトが自動作成されます：
+1. **クラウドエッジ技術に関する調査報告書** (v1.0)
+   - 技術分類フレームワークの確立
+   - 市場動向と成長予測分析（2030年457億ドル市場）
+   - 日本企業の競争優位性評価
+   - 戦略的提言とロードマップ
 
-```bash
-bash <(curl -fsSL https://raw.githubusercontent.com/dobachi/ResearchTemplate/main/scripts/create-project.sh) your-project-name
-```
+### 🔍 調査対象技術領域
 
-**前提条件:**
-- [GitHub CLI (gh)](https://cli.github.com/) がインストール済み
-- GitHub CLI が認証済み (`gh auth login`)
+- **デバイス連携型**: IoTゲートウェイ、プロトコル統合
+- **産業機械統合型**: OT/IT統合、デジタルツイン
+- **通信インフラ型**: 5G/MEC、ネットワーク仮想化
+- **プラットフォーム型**: コンテナ技術、エッジAI
 
-**このワンライナーが実行する処理:**
-1. ✅ 新しいプロジェクトディレクトリを作成
-2. ✅ このテンプレートを複製
-3. ✅ GitHubにプライベートリポジトリを作成
-4. ✅ 新しいリポジトリにプッシュ
-5. ✅ AI指示書システム（サブモジュール）を初期化
-6. ✅ プロジェクト設定を自動更新
+## プロジェクト開始方法
 
-### 手動での作成方法
-
-#### 1. テンプレートからリポジトリを作成
-
-GitHubで「Use this template」ボタンをクリックして、新しいリポジトリを作成します。
-
-#### 2. 初期設定
+### 1. 環境準備
 
 ```bash
 # リポジトリをクローン
@@ -52,32 +44,20 @@ git submodule update --init --recursive
 cat instructions/PROJECT.md
 ```
 
-### 調査開始
-
-プロジェクト作成後、以下のように調査を開始できます：
+### 2. 調査開始の手順
 
 ```bash
-# プロジェクトディレクトリに移動
-cd your-project-name
+# 現在の報告書を確認
+ls reports/
 
-# 調査テーマの設定（次のセクション参照）
-# その後、AI支援による調査開始（さらに次のセクション参照）
+# HTMLレポート生成
+scripts/build-report.sh html reports/cloud_edge_technology_research.md
+
+# PDF生成（Pandoc必要）
+scripts/build-report.sh pdf reports/cloud_edge_technology_research.md
 ```
 
-### 3. 調査テーマの設定
-
-`reports/config.yaml`で調査テーマと範囲を設定：
-
-```yaml
-title: "調査報告書タイトル"
-topic: "調査テーマ"
-scope:
-  - IT技術
-  - 法制度
-  - その他
-```
-
-### 4. AI支援による調査開始
+### 3. AI支援による分析拡張
 
 ```bash
 # チェックポイント管理で進捗を追跡
@@ -119,55 +99,60 @@ scripts/checkpoint.sh start "調査タスク名" 5
 
 ## 報告書作成のベストプラクティス
 
-### 1. 信頼性の高い情報源の活用
+### 1. 技術情報源の活用
 
-- 🏛️ 行政機関の公式発表
-- 📚 査読付き学術論文
-- 📋 国際標準・業界標準
-- 🏢 企業の公式技術文書
+- 🌐 国際標準化機関（IEEE、3GPP、ETSI、ITU-T）
+- 📊 市場調査機関（IDC、Gartner、McKinsey）
+- 🏭 主要技術企業（AWS、Microsoft、Google、日本企業）
+- 📚 査読付き学術論文（arXiv、IEEE Xplore）
 
-### 2. 適切な引用と参照
+### 2. 技術分類フレームワーク
 
-- すべての事実に引用元を明記
-- 参考文献リストとの相互参照を確保
-- 引用形式の一貫性を保つ
+この調査では以下の4つの主要カテゴリで技術を分類：
+- **デバイス連携型**: IoT-クラウド統合技術
+- **産業機械統合型**: 製造業向けOT/IT統合
+- **通信インフラ型**: 5G/6G + エッジコンピューティング
+- **プラットフォーム型**: クラウドネイティブエッジサービス
 
-### 3. 多角的な視点
+### 3. 市場分析の視点
 
-- 複数の見解や理論を検討
-- バランスの取れた分析
-- 明確な考察と事実の区別
-
-### 4. 報告書の構成
-
-必須項目：
-- エグゼクティブサマリ
-- 目次
-- 本文（背景、調査方法、結果、考察）
-- 結論
-- 参考文献一覧
+- グローバル市場規模と成長予測
+- 地域別市場分布と特徴
+- 日本企業の技術的優位性分析
+- 競合動向と差別化戦略
 
 ## 報告書のビルドとエクスポート
 
 ### HTMLレポートの生成
 
 ```bash
-scripts/build-report.sh html reports/your-report.md
+scripts/build-report.sh html reports/cloud_edge_technology_research.md
 ```
 
 ### PDFレポートの生成
 
 ```bash
-scripts/build-report.sh pdf reports/your-report.md
+scripts/build-report.sh pdf reports/cloud_edge_technology_research.md
 ```
 
-## AI指示書の活用
+### 引用チェック
 
-このプロジェクトには調査・報告書作成に特化したAI指示書が含まれています：
+```bash
+scripts/check-references.sh reports/cloud_edge_technology_research.md
+```
 
-- `research_analyst.md` - 調査分析の専門指示書
-- `report_writer.md` - 報告書執筆の専門指示書
-- `fact_checker.md` - ファクトチェックと引用管理
+## AI指示書システムの活用
+
+このプロジェクトには技術調査・分析に特化したAI指示書システムが含まれています：
+
+### プリセット指示書（高速・推奨）
+- `technical_writer.md` - 技術文書作成専門
+- `academic_researcher.md` - 学術研究・分析専門
+- `data_analyst.md` - データ分析・市場調査専門
+
+### 専門指示書
+- `research_analyst.md` - クラウドエッジ技術調査分析
+- `report_writer.md` - 技術報告書執筆
 
 詳細は`instructions/PROJECT.md`を参照してください。
 

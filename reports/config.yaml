@@ -1,43 +1,47 @@
-# 調査報告書設定ファイル
+# クラウドエッジ技術調査報告書設定ファイル
 
 # 報告書の基本情報
 report:
-  title: "[調査報告書のタイトル]"
-  subtitle: "[サブタイトル（オプション）]"
+  title: "クラウドエッジ技術に関する調査報告書"
+  subtitle: "日本の産業界における戦略的機会の分析"
   version: "1.0"
-  date: "YYYY-MM-DD"
+  date: "2025-09-27"
   language: "ja"  # ja: 日本語, en: 英語
 
 # 調査テーマと範囲
 research:
-  topic: "[主要な調査テーマ]"
+  topic: "クラウドエッジ技術の体系的分析と産業戦略"
   scope:
-    - "IT技術"
-    - "法制度・規制"
-    - "ソフトウェアプロジェクト"
-    # 必要に応じて追加
+    - "IoTエッジコンピューティング"
+    - "5G/6G通信技術"
+    - "エッジAI技術"
+    - "産業用IoT"
+    - "車載システム"
+    - "製造業DX"
+    - "スマートシティ技術"
 
   period:
-    start: "YYYY-MM-DD"
-    end: "YYYY-MM-DD"
+    start: "2024-12-01"
+    end: "2025-09-27"
 
   objectives:
-    - "[調査目的1]"
-    - "[調査目的2]"
-    - "[調査目的3]"
+    - "クラウドエッジ技術の体系的分類と特徴の整理"
+    - "グローバル市場動向と成長領域の特定"
+    - "日本企業の技術的強みと弱みの分析"
+    - "新産業領域確立のための具体的施策の提言"
 
 # 作成者情報
 authors:
   primary:
-    name: "[主執筆者名]"
-    organization: "[所属組織]"
-    email: "[連絡先メール]"
+    name: "ResearchEdgeCloudTech調査チーム"
+    organization: "クラウドエッジ技術研究プロジェクト"
+    email: "research@edge-cloud-tech.project"
 
   contributors:
-    - name: "[協力者1]"
-      role: "データ分析"
-    - name: "[協力者2]"
-      role: "レビュー"
+    - name: "AI指示書システム"
+      role: "調査・分析支援"
+    - name: "技術専門家"
+      role: "技術検証・レビュー"
 
 # 出力設定
 output:
@@ -71,10 +75,11 @@ quality:
   # 信頼性基準
   reliability:
     prefer_sources:
-      - "government"     # 政府・行政機関
-      - "academic"       # 学術論文
-      - "standards"      # 標準化団体
-      - "official"       # 企業公式文書
+      - "government"     # 政府・行政機関（経産省、総務省）
+      - "academic"       # 学術論文（IEEE、ACM）
+      - "standards"      # 標準化団体（3GPP、ETSI、ITU-T）
+      - "official"       # 企業公式文書・技術白書
+      - "research"       # 調査機関（IDC、Gartner、McKinsey）
 
     avoid_sources:
       - "wikipedia"      # 一次情報源として避ける
@@ -99,36 +104,51 @@ templates:
 
 # 調査分野別の設定
 domains:
-  it_technology:
+  cloud_edge_technology:
     sources:
       - "IEEE Xplore"
-      - "ACM Digital Library"
-      - "arXiv"
-      - "GitHub"
+      - "3GPP Specifications"
+      - "ETSI Standards"
+      - "ITU-T Recommendations"
+      - "IDC Research"
+      - "Gartner Reports"
+      - "McKinsey Institute"
+      - "CNCF (Cloud Native Computing Foundation)"
     keywords:
-      - "最新技術動向"
-      - "セキュリティ"
-      - "アーキテクチャ"
+      - "エッジコンピューティング"
+      - "5G/6G"
+      - "IoT"
+      - "Multi-access Edge Computing (MEC)"
+      - "Network Function Virtualization"
+      - "コンテナオーケストレーション"
+      - "エッジAI"
 
-  legal_regulatory:
+  industrial_iot:
     sources:
-      - "官報"
-      - "政府ポータル"
-      - "法令データベース"
+      - "Industrial Internet Consortium"
+      - "OPC Foundation"
+      - "経済産業省製造産業局"
+      - "Enterprise IoT Platforms"
     keywords:
-      - "法規制"
-      - "コンプライアンス"
-      - "ガイドライン"
+      - "OT/IT統合"
+      - "デジタルツイン"
+      - "予知保全"
+      - "スマートファクトリー"
+      - "産業4.0"
 
-  software_projects:
+  mobile_communications:
     sources:
-      - "GitHub"
-      - "GitLab"
-      - "プロジェクト公式サイト"
+      - "3GPP"
+      - "ITU-T"
+      - "総務省"
+      - "NTTドコモ技術文書"
+      - "KDDI Research"
     keywords:
-      - "実装"
-      - "アーキテクチャ"
-      - "ベストプラクティス"
+      - "5G SA"
+      - "Network Slicing"
+      - "URLLC"
+      - "mMTC"
+      - "ローカル5G"
 
 # 自動化設定
 automation:
