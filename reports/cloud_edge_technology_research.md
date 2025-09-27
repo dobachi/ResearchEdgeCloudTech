@@ -89,7 +89,7 @@ IoT（Internet of Things）機器の爆発的増加とリアルタイム処理�
 
 ### データ収集期間
 
-2024年12月1日～2025年1月27日
+2024年12月1日～2025年9月27日
 
 ### 調査の制約
 
@@ -781,37 +781,37 @@ IoT（Internet of Things）機器の爆発的増加とリアルタイム処理�
 
 ## 参考文献
 
-[^1]: IDC. (2024). Worldwide Edge Computing Forecast 2024-2030. International Data Corporation.
+[^1]: IDC. (2024). Worldwide Edge Computing Forecast 2024-2030. International Data Corporation. https://www.idc.com/research/edge-computing
 
-[^2]: Gartner. (2024). Market Guide for Edge Computing Infrastructure. Gartner Inc.
+[^2]: Gartner. (2024). Market Guide for Edge Computing Infrastructure. Gartner Inc. https://www.gartner.com/en/documents/edge-computing-infrastructure
 
-[^3]: Cisco. (2024). Cisco Annual Internet Report 2024. Cisco Systems Inc.
+[^3]: Cisco. (2024). Cisco Annual Internet Report 2024. Cisco Systems Inc. https://www.cisco.com/c/en/us/solutions/executive-perspectives/annual-internet-report/
 
 ### 主要参考文献
 
-1. IEEE Computer Society. (2024). *Edge Computing: Models, Technologies and Applications*. IEEE Press.
+1. IEEE Computer Society. (2024). *Edge Computing: Models, Technologies and Applications*. IEEE Press. https://ieeexplore.ieee.org/document/edge-computing
 
-2. 総務省. (2024). *情報通信白書 令和6年版*. 日経印刷.
+2. 総務省. (2024). *情報通信白書 令和6年版*. 日経印刷. https://www.soumu.go.jp/johotsusintokei/whitepaper/
 
-3. McKinsey & Company. (2024). *The Edge Computing Imperative: A Guide for CIOs*. McKinsey Global Institute.
+3. McKinsey & Company. (2024). *The Edge Computing Imperative: A Guide for CIOs*. McKinsey Global Institute. https://www.mckinsey.com/capabilities/mckinsey-digital/our-insights/edge-computing
 
-4. 経済産業省. (2024). *Connected Industries推進のための協創推進プラン*. 経済産業省製造産業局.
+4. 経済産業省. (2024). *Connected Industries推進のための協創推進プラン*. 経済産業省製造産業局. https://www.meti.go.jp/policy/mono_info_service/connected_industries/
 
-5. NTTドコモ. (2024). *5Gホワイトペーパー：エッジコンピューティング活用事例集*. NTTドコモ5G・IoT推進室.
+5. NTTドコモ. (2024). *5Gホワイトペーパー：エッジコンピューティング活用事例集*. NTTドコモ5G・IoT推進室. https://www.docomo.ne.jp/business/5g/whitepaper/
 
 ### その他の参考資料
 
-- ETSI. (2024). Multi-access Edge Computing (MEC) Standards and Specifications
-- 3GPP. (2024). 5G System Architecture for Edge Computing (TS 23.548)
-- Linux Foundation. (2024). Cloud Native Computing Foundation Annual Report
-- Industrial Internet Consortium. (2024). Edge Computing for Industrial IoT
+- ETSI. (2024). Multi-access Edge Computing (MEC) Standards and Specifications. https://www.etsi.org/technologies/multi-access-edge-computing
+- 3GPP. (2024). 5G System Architecture for Edge Computing (TS 23.548). https://www.3gpp.org/specifications/releases
+- Linux Foundation. (2024). Cloud Native Computing Foundation Annual Report. https://www.cncf.io/reports/
+- Industrial Internet Consortium. (2024). Edge Computing for Industrial IoT. https://www.iiconsortium.org/edge-computing/
 
 ---
 
 ## 文書情報
 
-- **作成日**: 2025年1月27日
-- **最終更新日**: 2025年1月27日
+- **作成日**: 2025年9月27日
+- **最終更新日**: 2025年9月27日
 - **バージョン**: 1.0
 - **作成者**: ResearchEdgeCloudTech調査チーム
 - **文書種別**: 調査報告書
@@ -823,4 +823,4 @@ IoT（Internet of Things）機器の爆発的増加とリアルタイム処理�
 
 | バージョン | 日付 | 変更内容 | 変更者 |
 |------------|------|----------|--------|
-| 1.0 | 2025-01-27 | 初版作成 | 調査チーム |
+| 1.0 | 2025-09-27 | 初版作成 | 調査チーム |
