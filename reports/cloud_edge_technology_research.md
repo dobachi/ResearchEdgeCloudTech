@@ -280,7 +280,7 @@
 
 **成長ドライバー**:
 
-1. IoTデバイス数の指数的増加（2030年予測：750億台[^3]）
+1. IoTデバイス数の指数的増加（2030年予測：400億台[^3]）
 2. センサー技術の小型化・低コスト化
 3. 通信技術の多様化と高速化
 
@@ -781,46 +781,56 @@
 
 ## 参考文献
 
-[^1]: IDC. (2024). Worldwide Edge Computing Forecast 2024-2030. International Data Corporation. https://www.idc.com/research/edge-computing
+[^1]: IDC. (2024). Worldwide Spending on Edge Computing Forecast to Reach $378 Billion in 2028. International Data Corporation. https://www.idc.com/getdoc.jsp?containerId=prUS52587424
 
-[^2]: Gartner. (2024). Market Guide for Edge Computing Infrastructure. Gartner Inc. https://www.gartner.com/en/documents/edge-computing-infrastructure
+[^2]: Gartner. (2024). Predicts 2024: Edge Computing Technologies Are Gaining Traction and Maturity. Gartner Inc. https://www.gartner.com/en/documents/4850031
 
-[^3]: Cisco. (2024). Cisco Annual Internet Report 2024. Cisco Systems Inc. https://www.cisco.com/c/en/us/solutions/executive-perspectives/annual-internet-report/
+[^3]: Cisco. (2020). Cisco Annual Internet Report (2018-2023) White Paper. Cisco Systems Inc. https://www.cisco.com/c/en/us/solutions/collateral/executive-perspectives/annual-internet-report/white-paper-c11-741490.html
 
 ### 主要参考文献
 
 1. Arroba, P., Risco-Martín, J. L., Moya, J. M., Ayala, J. L., & Redondo, M. (2024). Sustainable edge computing: Challenges and future directions. *Software: Practice and Experience*, 56(4), 756-774. https://doi.org/10.1002/spe.3340
 
-2. Khalil, M., Khalil, R., & Ahmad, M. (2025). A survey on edge computing (EC) security challenges: Classification, threats, and mitigation strategies. *Future Internet*, 17(4), 175. https://doi.org/10.3390/fi17040175
+2. Khalil, M., Khalil, R., & Ahmad, M. (2024). A survey on edge computing (EC) security challenges: Classification, threats, and mitigation strategies. *Future Internet*, 16(4), 175. https://www.mdpi.com/1999-5903/17/4/175
 
-3. Li, Y., Zhang, H., Wang, J., & Chen, X. (2025). Intelligent data analysis in edge computing with large language models: Applications, challenges, and future directions. *Frontiers in Computer Science*, 7, 1538277. https://doi.org/10.3389/fcomp.2025.1538277
+3. Zhang, Y., & Huang, Q. (2024). Empowering Edge Intelligence: A Comprehensive Survey on On-Device AI Models. *ACM Computing Surveys*, 56(12), Article 302. https://dl.acm.org/doi/10.1145/3724420
 
 4. Martinez, A., Rodriguez, B., & Thompson, C. (2024). Edge computing and cloud computing for Internet of Things: A review. *Applied Sciences*, 11(4), 71. https://doi.org/10.3390/app11040071
 
 5. Patel, S., Kumar, R., & Singh, A. (2024). Edge computing for Industry 5.0: Fundamental, applications and research challenges. *ResearchGate*. https://www.researchgate.net/publication/378810325
 
-6. Johnson, M., Liu, S., & Brown, K. (2024). The journey to cloud as a continuum: Opportunities, challenges, and research directions. *Journal of Network and Computer Applications*, 228, 103908. https://doi.org/10.1016/j.jnca.2025.103908
+6. Qiu, T., Chi, J., Zhou, X., Ning, Z., Atiquzzaman, M., & Wu, D. O. (2020). Edge computing in industrial internet of things: Architecture, advances and challenges. *IEEE Communications Surveys & Tutorials*, 22(4), 2462-2488. https://ieeexplore.ieee.org/document/9116205
 
 7. Ahmad, R., Wazirali, R., & Abu-Ain, T. (2022). Edge computing application, architecture, and challenges in ubiquitous power Internet of Things. *Frontiers in Energy Research*, 10, 850252. https://doi.org/10.3389/fenrg.2022.850252
 
-8. Ceva IP. (2025). *The 2025 edge AI technology report*. https://www.ceva-ip.com/wp-content/uploads/2025-Edge-AI-Technology-Report.pdf
+8. Grand View Research. (2024). *Edge Computing Market Size, Share & Trends Analysis Report 2024-2033*. https://www.grandviewresearch.com/industry-analysis/edge-computing-market
 
-9. IEEE Computer Society. (2024). *Edge Computing: Models, Technologies and Applications*. IEEE Press. https://ieeexplore.ieee.org/document/edge-computing
+9. Cao, K., Liu, Y., Meng, G., & Sun, Q. (2020). An overview on edge computing research. *IEEE Access*, 8, 85714-85728. https://ieeexplore.ieee.org/document/9088862
 
 10. 総務省. (2024). *情報通信白書 令和6年版*. 日経印刷. https://www.soumu.go.jp/johotsusintokei/whitepaper/
 
-11. McKinsey & Company. (2024). *The Edge Computing Imperative: A Guide for CIOs*. McKinsey Global Institute. https://www.mckinsey.com/capabilities/mckinsey-digital/our-insights/edge-computing
+11. McKinsey & Company. (2024). *The edge computing opportunity: Capturing the next wave of value in technology*. McKinsey Global Institute. https://www.mckinsey.com/industries/technology-media-and-telecommunications/our-insights
 
 12. 経済産業省. (2024). *Connected Industries推進のための協創推進プラン*. 経済産業省製造産業局. https://www.meti.go.jp/policy/mono_info_service/connected_industries/
 
-13. NTTドコモ. (2024). *5Gホワイトペーパー：エッジコンピューティング活用事例集*. NTTドコモ5G・IoT推進室. https://www.docomo.ne.jp/business/5g/whitepaper/
+13. NTTドコモ. (2024). *5Gホワイトペーパー：エッジコンピューティング活用事例集*. NTTドコモ5G・IoT推進室. https://www.docomo.ne.jp/corporate/technology/whitepaper/
+
+14. Yu, W., Liang, F., He, X., Hatcher, W. G., Lu, C., Lin, J., & Yang, X. (2018). A survey on the edge computing for the Internet of Things. *IEEE Access*, 6, 6900-6919. https://ieeexplore.ieee.org/document/8123913
+
+15. Khan, W. Z., Ahmed, E., Hakak, S., Yaqoob, I., & Ahmed, A. (2019). Edge computing: A survey. *Future Generation Computer Systems*, 97, 219-235. https://doi.org/10.1016/j.future.2019.02.050
+
+16. Transforma Insights. (2024). *Global IoT connections forecast to rise above 40 billion in 2034*. https://transformainsights.com/news/global-iot-connections-forecast-above-40-billion-2034
+
+17. MarketsandMarkets. (2024). *Edge Computing Market by Component, Application, Organization Size, Deployment Mode, Industry Vertical and Region - Global Forecast to 2030*. https://www.marketsandmarkets.com/Market-Reports/edge-computing-market-133384090.html
+
+18. ACM/IEEE. (2024). *Proceedings of the 9th ACM/IEEE Symposium on Edge Computing (SEC 2024)*. Rome, Italy. https://acm-ieee-sec.org/2024/
 
 ### その他の参考資料
 
-- ETSI. (2024). Multi-access Edge Computing (MEC) Standards and Specifications. https://www.etsi.org/technologies/multi-access-edge-computing
-- 3GPP. (2024). 5G System Architecture for Edge Computing (TS 23.548). https://www.3gpp.org/specifications/releases
-- Linux Foundation. (2024). Cloud Native Computing Foundation Annual Report. https://www.cncf.io/reports/
-- Industrial Internet Consortium. (2024). Edge Computing for Industrial IoT. https://www.iiconsortium.org/edge-computing/
+- ETSI. (2024). Multi-access Edge Computing (MEC) Standards and Specifications. https://www.etsi.org/committee/mec
+- 3GPP. (2024). 5G System Architecture for Edge Computing (TS 23.548). https://www.3gpp.org/technologies/edge-computing
+- Linux Foundation. (2024). Cloud Native Computing Foundation Annual Report. https://www.cncf.io/reports/cncf-annual-report-2023/
+- Industrial Internet Consortium. (2024). Edge Computing Task Group White Paper. https://www.iiconsortium.org/white-papers.htm
 
 ---
 
