@@ -123,23 +123,151 @@ scripts/checkpoint.sh start "調査タスク名" 5
 
 ## 報告書のビルドとエクスポート
 
-### HTMLレポートの生成
+### Quartoベースレポートの生成（推奨）
 
 ```bash
+# HTML版の生成
+scripts/build-quarto-report.sh html
+
+# PDF版の生成
+scripts/build-quarto-report.sh pdf
+
+# 全形式の生成
+scripts/build-quarto-report.sh all
+```
+
+### 従来形式レポートの生成
+
+```bash
+# HTMLレポートの生成
 scripts/build-report.sh html reports/cloud_edge_technology_research.md
-```
 
-### PDFレポートの生成
-
-```bash
+# PDFレポートの生成
 scripts/build-report.sh pdf reports/cloud_edge_technology_research.md
-```
 
-### 引用チェック
-
-```bash
+# 引用チェック
 scripts/check-references.sh reports/cloud_edge_technology_research.md
 ```
+
+### Quartoの利点と詳細ガイド
+
+#### 主要な利点
+- ✅ **自動章節番号付与**: セクション番号の手動管理が不要
+- ✅ **相互参照機能**: 図表・章節への自動リンク生成
+- ✅ **引用管理**: BibTeX連携による自動文献リスト作成
+- ✅ **多形式出力**: HTML、PDF、EPUBへの同時出力
+- ✅ **レスポンシブHTML**: モバイル対応の美しいレイアウト
+- ✅ **検索機能**: HTML版での高速全文検索
+
+#### 前提条件
+
+**Quarto CLI**（必須）:
+```bash
+# インストール方法
+# 1. 公式サイト: https://quarto.org/docs/get-started/
+# 2. または以下のコマンド（Linux）
+curl -LO https://quarto.org/download/latest/quarto-linux-amd64.deb
+sudo dpkg -i quarto-linux-amd64.deb
+```
+
+**PDF生成用**（オプション）:
+```bash
+# LaTeX環境（フルインストール）
+sudo apt-get install texlive-full
+
+# または軽量版
+quarto install tinytex
+```
+
+**確認**:
+```bash
+# Quartoバージョン確認
+quarto --version
+
+# リアルタイムプレビュー
+cd reports && quarto preview cloud_edge_technology_research.qmd
+```
+
+#### Quartoファイル構造
+
+```
+reports/
+├── _quarto.yml                          # プロジェクト設定
+├── index.qmd                           # ポータルページ
+├── cloud_edge_technology_research.qmd  # メイン報告書
+├── references.bib                      # 文献データベース
+└── templates/
+    └── styles/
+        └── report-style.css            # カスタムCSS
+```
+
+#### 主要機能の使用方法
+
+**1. 相互参照**:
+```markdown
+# 章への参照
+@sec-classification で示した技術分類により...
+
+# 図表への参照
+@tbl-market-forecast に示すように...
+```
+
+**2. 文献引用**:
+```markdown
+# インライン引用
+エッジコンピューティング市場は成長している[@idc2024edge]。
+
+# 複数引用
+複数の調査[@idc2024edge; @cisco2020internet]によると...
+```
+
+**3. 図表の自動番号付与**:
+```markdown
+| 項目 | 値 |
+|------|-----|
+| 市場規模 | 143億ドル |
+
+: 市場規模予測 {#tbl-market-forecast}
+```
+
+#### よくある問題と解決方法
+
+**PDF生成でエラーが出る場合**:
+```bash
+# LaTeXログを確認
+quarto render --verbose cloud_edge_technology_research.qmd --to pdf
+
+# TinyTeXをインストール
+quarto install tinytex
+```
+
+**日本語フォントが表示されない場合**:
+`_quarto.yml`でフォントを指定:
+```yaml
+format:
+  pdf:
+    mainfont: "Noto Serif CJK JP"
+    sansfont: "Noto Sans CJK JP"
+```
+
+**相互参照が機能しない場合**:
+- IDの重複をチェック（`{#sec-id}`）
+- セクションレベルの確認
+- 正しい参照形式（`@sec-id`）の使用
+
+#### 移行の利点
+
+**Before（従来のMarkdown）**:
+- ❌ 手動での章節番号管理
+- ❌ 参照の手動更新
+- ❌ 図表番号の手動管理
+- ❌ 引用の手動フォーマット
+
+**After（Quarto）**:
+- ✅ 完全自動の番号管理
+- ✅ 動的な相互参照
+- ✅ 自動図表番号
+- ✅ BibTeX連携引用
 
 ## AI指示書システムの活用
 
