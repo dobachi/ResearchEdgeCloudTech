@@ -394,37 +394,198 @@ lang: ja
 
 @sec-classification で示した6つのカテゴリは独立したものではなく、実際のソリューションでは複数の技術が組み合わされる：
 
-```
-┌─────────────────────────────────────────────────────────────────────────┐
-│                              クラウド層                                    │
-├─────────────────────────────┬───────────────────────────────────────────┤
-│    汎用プラットフォーム型      │        産業プラットフォーム型                │
-│   (AWS IoT, Azure IoT)      │     (Siemens MindSphere)                 │
-└─────────────────────────────┴───────────────────────────────────────────┘
-                              ↑     ↑
-                              │     │
-┌─────────────────────────────────────────────────────────────────────────┐
-│                              通信層                                      │
-├─────────────────────────────┬───────────────────────────────────────────┤
-│    汎用通信インフラ型         │        産業通信統合型                      │
-│    (5G MEC, CDN)           │      (ローカル5G, TSN)                    │
-└─────────────────────────────┴───────────────────────────────────────────┘
-                              ↑     ↑
-                              │     │
-┌─────────────────────────────────────────────────────────────────────────┐
-│                           エッジ処理層                                    │
-├──────────────┬─────────────────┬────────────────────────────────────────┤
-│   エッジAI    │   ゲートウェイ    │         エッジ分析                        │
-│ (推論・学習)   │ (プロトコル変換)  │     (リアルタイム処理)                     │
-└──────────────┴─────────────────┴────────────────────────────────────────┘
-                              ↑     ↑
-                              │     │
-┌─────────────────────────────────────────────────────────────────────────┐
-│                           デバイス層                                      │
-├─────────────────────────────┬───────────────────────────────────────────┤
-│    汎用デバイス連携型         │        産業特化統合型                      │
-│     (IoTセンサー)           │      (FA機器, 車載系)                     │
-└─────────────────────────────┴───────────────────────────────────────────┘
+```{ojs}
+//| echo: false
+//| fig-cap: "クラウドエッジ技術の階層構造と相互関係"
+//| fig-width: 12
+//| fig-height: 8
+
+{
+  // データ定義
+  const layers = [
+    {
+      name: "クラウド層",
+      y: 80,
+      height: 100,
+      color: "#e3f2fd",
+      stroke: "#1976d2",
+      boxes: [
+        { name: "汎用プラットフォーム型", detail: "(AWS IoT, Azure IoT)", x: 50, width: 300 },
+        { name: "産業プラットフォーム型", detail: "(Siemens MindSphere)", x: 400, width: 300 }
+      ]
+    },
+    {
+      name: "通信層",
+      y: 220,
+      height: 100,
+      color: "#f3e5f5",
+      stroke: "#7b1fa2",
+      boxes: [
+        { name: "汎用通信インフラ型", detail: "(5G MEC, CDN)", x: 50, width: 300 },
+        { name: "産業通信統合型", detail: "(ローカル5G, TSN)", x: 400, width: 300 }
+      ]
+    },
+    {
+      name: "エッジ処理層",
+      y: 360,
+      height: 100,
+      color: "#e8f5e8",
+      stroke: "#388e3c",
+      boxes: [
+        { name: "エッジAI", detail: "(推論・学習)", x: 50, width: 180 },
+        { name: "ゲートウェイ", detail: "(プロトコル変換)", x: 260, width: 180 },
+        { name: "エッジ分析", detail: "(リアルタイム処理)", x: 470, width: 230 }
+      ]
+    },
+    {
+      name: "デバイス層",
+      y: 500,
+      height: 100,
+      color: "#fff3e0",
+      stroke: "#f57c00",
+      boxes: [
+        { name: "汎用デバイス連携型", detail: "(IoTセンサー)", x: 50, width: 300 },
+        { name: "産業特化統合型", detail: "(FA機器, 車載系)", x: 400, width: 300 }
+      ]
+    }
+  ];
+
+  // SVG作成
+  const width = 800;
+  const height = 650;
+  const svg = d3.create("svg")
+    .attr("width", width)
+    .attr("height", height)
+    .attr("viewBox", `0 0 ${width} ${height}`)
+    .style("font-family", "system-ui, sans-serif")
+    .style("background", "white");
+
+  // 層の描画
+  layers.forEach(layer => {
+    // 層の背景
+    svg.append("rect")
+      .attr("x", 30)
+      .attr("y", layer.y)
+      .attr("width", width - 60)
+      .attr("height", layer.height)
+      .attr("fill", layer.color)
+      .attr("stroke", layer.stroke)
+      .attr("stroke-width", 2)
+      .attr("rx", 8);
+
+    // 層のタイトル
+    svg.append("text")
+      .attr("x", width / 2)
+      .attr("y", layer.y + 25)
+      .attr("text-anchor", "middle")
+      .attr("font-size", "16px")
+      .attr("font-weight", "bold")
+      .attr("fill", "#333")
+      .text(layer.name);
+
+    // 技術ボックスの描画
+    layer.boxes.forEach(box => {
+      const boxGroup = svg.append("g");
+
+      // ボックス
+      boxGroup.append("rect")
+        .attr("x", box.x)
+        .attr("y", layer.y + 40)
+        .attr("width", box.width)
+        .attr("height", 45)
+        .attr("fill", "white")
+        .attr("stroke", layer.stroke)
+        .attr("stroke-width", 1)
+        .attr("rx", 4);
+
+      // メインテキスト
+      boxGroup.append("text")
+        .attr("x", box.x + box.width / 2)
+        .attr("y", layer.y + 58)
+        .attr("text-anchor", "middle")
+        .attr("font-size", "12px")
+        .attr("font-weight", "600")
+        .attr("fill", "#333")
+        .text(box.name);
+
+      // 詳細テキスト
+      boxGroup.append("text")
+        .attr("x", box.x + box.width / 2)
+        .attr("y", layer.y + 74)
+        .attr("text-anchor", "middle")
+        .attr("font-size", "10px")
+        .attr("fill", "#666")
+        .text(box.detail);
+    });
+  });
+
+  // 矢印マーカーの定義（先に定義）
+  const defs = svg.append("defs");
+  defs.append("marker")
+    .attr("id", "arrowhead")
+    .attr("viewBox", "0 -5 10 10")
+    .attr("refX", 8)
+    .attr("refY", 0)
+    .attr("orient", "auto")
+    .attr("markerWidth", 6)
+    .attr("markerHeight", 6)
+    .append("path")
+    .attr("d", "M0,-5L10,0L0,5")
+    .attr("fill", "#555");
+
+  // 情報フローの矢印（層間の空白に配置）
+  const verticalArrows = [
+    // デバイス→エッジ（層間の空白）
+    { from: [200, 490], to: [200, 470] },
+    { from: [550, 490], to: [550, 470] },
+    // エッジ→通信（層間の空白）
+    { from: [200, 350], to: [200, 330] },
+    { from: [550, 350], to: [550, 330] },
+    // 通信→クラウド（層間の空白）
+    { from: [200, 210], to: [200, 190] },
+    { from: [550, 210], to: [550, 190] }
+  ];
+
+  // 縦方向矢印の描画
+  verticalArrows.forEach(arrow => {
+    svg.append("line")
+      .attr("x1", arrow.from[0])
+      .attr("y1", arrow.from[1])
+      .attr("x2", arrow.to[0])
+      .attr("y2", arrow.to[1])
+      .attr("stroke", "#555")
+      .attr("stroke-width", 2)
+      .attr("marker-end", "url(#arrowhead)");
+  });
+
+  // 横方向の連携線（各層の外側に配置）
+  layers.forEach((layer, index) => {
+    if (layer.boxes.length === 2) {
+      const yPos = layer.y + layer.height + 10;  // 層の外側（下）に配置
+
+      // 点線
+      svg.append("line")
+        .attr("x1", layer.boxes[0].x + layer.boxes[0].width / 2)
+        .attr("y1", yPos)
+        .attr("x2", layer.boxes[1].x + layer.boxes[1].width / 2)
+        .attr("y2", yPos)
+        .attr("stroke", "#999")
+        .attr("stroke-width", 1)
+        .attr("stroke-dasharray", "3,3");
+
+      // 連携ラベル
+      svg.append("text")
+        .attr("x", (layer.boxes[0].x + layer.boxes[0].width / 2 + layer.boxes[1].x + layer.boxes[1].width / 2) / 2)
+        .attr("y", yPos + 15)
+        .attr("text-anchor", "middle")
+        .attr("font-size", "8px")
+        .attr("fill", "#777")
+        .text("技術連携");
+    }
+  });
+
+  return svg.node();
+}
 ```
 
 この技術統合により実現される**主要な統合パターン**：
@@ -553,11 +714,59 @@ lang: ja
 
 ### 政府主導のAI・エッジ戦略（2025年）
 
-**ガバメントAI構想**: 2025年6月にデジタル庁が発表した政府業務のAIネイティブ化計画。2026年度完成予定で、行政のAI導入が民間への普及を加速。
+#### ガバメントAI構想の全容
 
-**人工知能法制定**: 2025年6月制定の新法により、日本を「世界最もAI開発・活用しやすい国」として位置づけ。AI安全研究所設立とガイドライン策定で産業界支援強化。
+**基本概要**: 2025年6月13日の閣議決定「デジタル社会の実現に向けた重点計画」において正式発表された、政府全体の業務AIネイティブ化を目指す包括的戦略[@digital_agency_2025_plan]。
 
-**デジタル社会重点計画2025**: 生成AI、量子技術、データ活用を包括した国家戦略により、エッジコンピューティングの社会実装を加速。
+**実装スケジュール**:
+
+- **2025年度**: 先行実装フェーズ（基盤構築・試行運用）
+- **2026年度**: 本格運用開始（全省庁横断展開）
+- **2027年度以降**: 地方自治体連携・高度化
+
+**技術的特徴**:
+
+- **統合型AIプラットフォーム**: 各省庁が個別システムではなく、共通基盤上でAIサービスを利用
+- **マルチLLM対応**: 複数の大規模言語モデルを選択可能な柔軟なアーキテクチャ
+- **セキュリティ重視**: 政府情報システム統一基準準拠のゼロトラストアーキテクチャ採用
+- **エッジ連携**: 地方機関・出先機関でのリアルタイム処理を想定した分散処理設計
+
+**組織体制**:
+
+- **AI担当統括官（CAIO）**: 各省庁にAI Chief Information Officerを配置
+- **ガバメントAI推進委員会**: デジタル庁主導の省庁横断組織
+- **AIガバナンス評議会**: 学識経験者・民間専門家による外部諮問機関
+
+#### AI新法（AI関連技術の研究開発・利用促進法）の影響
+
+**制定経緯**: 2025年5月28日に成立・公布、同年6月13日に施行開始[@ai_new_law_2025]。
+
+**主要条項**:
+
+- **第1条（目的）**: 日本を「世界で最もAI開発・活用しやすい国」として位置づけ
+- **第2章（国の責務）**: AI研究開発投資の計画的実施義務
+- **第3章（産業支援措置）**: スタートアップ・中小企業向けAI活用支援制度
+- **第4章（安全・倫理基準）**: AI安全研究所設立と産業向けガイドライン策定
+
+**民間への波及効果**:
+
+- **調達基準の統一**: 政府調達におけるAI品質基準が民間標準のベンチマークとして機能
+- **人材流動化**: 政府AI人材と民間の交流促進により、スキル向上と知識移転を加速
+- **実証環境提供**: 政府業務での実証結果を匿名化して民間企業の開発に活用
+
+#### デジタル社会重点計画2025における位置づけ
+
+**戦略的優先分野**:
+1. **生成AI基盤**: ChatGPT等の汎用AIと業務特化AIの統合活用
+2. **量子技術連携**: 量子コンピューティングとの将来的統合を見据えた基盤設計
+3. **データ利活用**: 政府保有データの民間開放とAI学習データとしての活用促進
+4. **エッジコンピューティング**: 地方自治体・出先機関でのリアルタイム行政サービス実現
+
+**クラウド・エッジ技術への含意**:
+
+- **ハイブリッドクラウド需要**: セキュリティ要件により政府専用クラウドと民間クラウドの連携ニーズ拡大
+- **エッジAI市場創出**: 地方行政のデジタル化により、エッジAI需要が2026年以降急拡大予測
+- **標準化推進**: 政府利用を通じたAI・クラウド技術の事実上の標準化効果
 
 ### エッジAIの技術進化
 
