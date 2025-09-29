@@ -40,7 +40,7 @@ lang: ja
 
 **期待アウトカム**: IT人材不足の解消と高付加価値雇用創出による持続的なイノベーション創出基盤の確立
 
-**根拠・ロジック**: 2025年時点でIT人材不足は深刻化し、2030年には最大79万人不足の予測[@mizuho2019it]。政府は「ガバメントAI」構想や人工知能法制定でAI人材育成を強化[@meti2024digital]。製造業エッジ・クラウド市場は2025年496億ドルから2032年2,235億ドルへ成長予測（CAGR 24.0%）[@soumu2024ict]、専門人材需要は急増。高スキルIT人材は他職種より高賃金で、人材育成投資の経済効果は高い。
+**根拠・ロジック**: 2025年時点でIT人材不足は深刻化し、2030年には最大79万人不足の予測[@mizuho2019it]。政府は「ガバメントAI」構想や「人工知能関連技術の研究開発及び活用の推進に関する法律」制定でAI人材育成を強化[@meti2024digital][@ai_new_law_2025]。製造業エッジ・クラウド市場は2025年496億ドルから2032年2,235億ドルへ成長予測（CAGR 24.0%）[@soumu2024ict]、専門人材需要は急増。高スキルIT人材は他職種より高賃金で、人材育成投資の経済効果は高い。
 
 ### 投資環境の整備 {#sec-investment}
 
@@ -394,199 +394,14 @@ lang: ja
 
 @sec-classification で示した6つのカテゴリは独立したものではなく、実際のソリューションでは複数の技術が組み合わされる：
 
-```{ojs}
-//| echo: false
-//| fig-cap: "クラウドエッジ技術の階層構造と相互関係"
-//| fig-width: 12
-//| fig-height: 8
+::: {#fig-tech-layers}
 
-{
-  // データ定義
-  const layers = [
-    {
-      name: "クラウド層",
-      y: 80,
-      height: 100,
-      color: "#e3f2fd",
-      stroke: "#1976d2",
-      boxes: [
-        { name: "汎用プラットフォーム型", detail: "(AWS IoT, Azure IoT)", x: 50, width: 300 },
-        { name: "産業プラットフォーム型", detail: "(Siemens MindSphere)", x: 400, width: 300 }
-      ]
-    },
-    {
-      name: "通信層",
-      y: 220,
-      height: 100,
-      color: "#f3e5f5",
-      stroke: "#7b1fa2",
-      boxes: [
-        { name: "汎用通信インフラ型", detail: "(5G MEC, CDN)", x: 50, width: 300 },
-        { name: "産業通信統合型", detail: "(ローカル5G, TSN)", x: 400, width: 300 }
-      ]
-    },
-    {
-      name: "エッジ処理層",
-      y: 360,
-      height: 100,
-      color: "#e8f5e8",
-      stroke: "#388e3c",
-      boxes: [
-        { name: "エッジAI", detail: "(推論・学習)", x: 50, width: 180 },
-        { name: "ゲートウェイ", detail: "(プロトコル変換)", x: 260, width: 180 },
-        { name: "エッジ分析", detail: "(リアルタイム処理)", x: 470, width: 230 }
-      ]
-    },
-    {
-      name: "デバイス層",
-      y: 500,
-      height: 100,
-      color: "#fff3e0",
-      stroke: "#f57c00",
-      boxes: [
-        { name: "汎用デバイス連携型", detail: "(IoTセンサー)", x: 50, width: 300 },
-        { name: "産業特化統合型", detail: "(FA機器, 車載系)", x: 400, width: 300 }
-      ]
-    }
-  ];
-
-  // SVG作成
-  const width = 800;
-  const height = 650;
-  const svg = d3.create("svg")
-    .attr("width", width)
-    .attr("height", height)
-    .attr("viewBox", `0 0 ${width} ${height}`)
-    .style("font-family", "system-ui, sans-serif")
-    .style("background", "white");
-
-  // 層の描画
-  layers.forEach(layer => {
-    // 層の背景
-    svg.append("rect")
-      .attr("x", 30)
-      .attr("y", layer.y)
-      .attr("width", width - 60)
-      .attr("height", layer.height)
-      .attr("fill", layer.color)
-      .attr("stroke", layer.stroke)
-      .attr("stroke-width", 2)
-      .attr("rx", 8);
-
-    // 層のタイトル
-    svg.append("text")
-      .attr("x", width / 2)
-      .attr("y", layer.y + 25)
-      .attr("text-anchor", "middle")
-      .attr("font-size", "16px")
-      .attr("font-weight", "bold")
-      .attr("fill", "#333")
-      .text(layer.name);
-
-    // 技術ボックスの描画
-    layer.boxes.forEach(box => {
-      const boxGroup = svg.append("g");
-
-      // ボックス
-      boxGroup.append("rect")
-        .attr("x", box.x)
-        .attr("y", layer.y + 40)
-        .attr("width", box.width)
-        .attr("height", 45)
-        .attr("fill", "white")
-        .attr("stroke", layer.stroke)
-        .attr("stroke-width", 1)
-        .attr("rx", 4);
-
-      // メインテキスト
-      boxGroup.append("text")
-        .attr("x", box.x + box.width / 2)
-        .attr("y", layer.y + 58)
-        .attr("text-anchor", "middle")
-        .attr("font-size", "12px")
-        .attr("font-weight", "600")
-        .attr("fill", "#333")
-        .text(box.name);
-
-      // 詳細テキスト
-      boxGroup.append("text")
-        .attr("x", box.x + box.width / 2)
-        .attr("y", layer.y + 74)
-        .attr("text-anchor", "middle")
-        .attr("font-size", "10px")
-        .attr("fill", "#666")
-        .text(box.detail);
-    });
-  });
-
-  // 矢印マーカーの定義（先に定義）
-  const defs = svg.append("defs");
-  defs.append("marker")
-    .attr("id", "arrowhead")
-    .attr("viewBox", "0 -5 10 10")
-    .attr("refX", 8)
-    .attr("refY", 0)
-    .attr("orient", "auto")
-    .attr("markerWidth", 6)
-    .attr("markerHeight", 6)
-    .append("path")
-    .attr("d", "M0,-5L10,0L0,5")
-    .attr("fill", "#555");
-
-  // 情報フローの矢印（層間の空白に配置）
-  const verticalArrows = [
-    // デバイス→エッジ（層間の空白）
-    { from: [200, 490], to: [200, 470] },
-    { from: [550, 490], to: [550, 470] },
-    // エッジ→通信（層間の空白）
-    { from: [200, 350], to: [200, 330] },
-    { from: [550, 350], to: [550, 330] },
-    // 通信→クラウド（層間の空白）
-    { from: [200, 210], to: [200, 190] },
-    { from: [550, 210], to: [550, 190] }
-  ];
-
-  // 縦方向矢印の描画
-  verticalArrows.forEach(arrow => {
-    svg.append("line")
-      .attr("x1", arrow.from[0])
-      .attr("y1", arrow.from[1])
-      .attr("x2", arrow.to[0])
-      .attr("y2", arrow.to[1])
-      .attr("stroke", "#555")
-      .attr("stroke-width", 2)
-      .attr("marker-end", "url(#arrowhead)");
-  });
-
-  // 横方向の連携線（各層の外側に配置）
-  layers.forEach((layer, index) => {
-    if (layer.boxes.length === 2) {
-      const yPos = layer.y + layer.height + 10;  // 層の外側（下）に配置
-
-      // 点線
-      svg.append("line")
-        .attr("x1", layer.boxes[0].x + layer.boxes[0].width / 2)
-        .attr("y1", yPos)
-        .attr("x2", layer.boxes[1].x + layer.boxes[1].width / 2)
-        .attr("y2", yPos)
-        .attr("stroke", "#999")
-        .attr("stroke-width", 1)
-        .attr("stroke-dasharray", "3,3");
-
-      // 連携ラベル
-      svg.append("text")
-        .attr("x", (layer.boxes[0].x + layer.boxes[0].width / 2 + layer.boxes[1].x + layer.boxes[1].width / 2) / 2)
-        .attr("y", yPos + 15)
-        .attr("text-anchor", "middle")
-        .attr("font-size", "8px")
-        .attr("fill", "#777")
-        .text("技術連携");
-    }
-  });
-
-  return svg.node();
-}
+```{=html}
+{{< include images/tech-diagram.svg >}}
 ```
+
+クラウドエッジ技術の階層構造と相互関係
+:::
 
 この技術統合により実現される**主要な統合パターン**：
 
@@ -714,73 +529,44 @@ lang: ja
 
 ### 政府主導のAI・エッジ戦略（2025年）
 
-#### ガバメントAI構想の全容
+#### ガバメントAI構想の概要
 
-**基本概要**: 2025年6月13日の閣議決定「デジタル社会の実現に向けた重点計画」において正式発表された、政府全体の業務AIネイティブ化を目指す包括的戦略[@digital_agency_2025_plan]。
-
-**実装スケジュール**:
-
-- **2025年度**: 先行実装フェーズ（基盤構築・試行運用）
-- **2026年度**: 本格運用開始（全省庁横断展開）
-- **2027年度以降**: 地方自治体連携・高度化
-
-**技術的特徴**:
-
-- **統合型AIプラットフォーム**: 各省庁が個別システムではなく、共通基盤上でAIサービスを利用
-- **マルチLLM対応**: 複数の大規模言語モデルを選択可能な柔軟なアーキテクチャ
-- **セキュリティ重視**: 政府情報システム統一基準準拠のゼロトラストアーキテクチャ採用
-- **エッジ連携**: 地方機関・出先機関でのリアルタイム処理を想定した分散処理設計
+**基本方針**: 2025年6月13日の閣議決定「デジタル社会の実現に向けた重点計画」において、デジタル庁が「政府等におけるAI基盤（ガバメントAI（仮称））を構築する」ことが明記された[@digital_agency_2025_plan]。
 
 **組織体制**:
 
-- **AI担当統括官（CAIO）**: 各省庁にAI Chief Information Officerを配置
-- **ガバメントAI推進委員会**: デジタル庁主導の省庁横断組織
-- **AIガバナンス評議会**: 学識経験者・民間専門家による外部諮問機関
+- **AI統括責任者（CAIO）**: 「各府省庁へのAI統括責任者（CAIO）を設置する」として、各省庁にAI統括責任者を配置
+- **先進的AI利活用アドバイザリーボード**: 「デジタル社会推進会議に先進的AI利活用アドバイザリーボードを設置する等AIのガバナンス・推進体制の構築に取り組む」として、外部専門家による助言機能を整備
 
-#### AI新法（AI関連技術の研究開発・利用促進法）の影響
+**推進方針**: AI利活用に資する政府保有データの整備・普及を行い、「生成AIの利活用促進とリスク管理を表裏一体で進める」アプローチを採用。地方公共団体が「AIを活用し、各行政事務・サービスの質の維持・向上や業務効率化を図ることを支援する」ための基盤整備を推進。
 
-**制定経緯**: 2025年5月28日に成立・公布、同年6月13日に施行開始[@ai_new_law_2025]。
+#### 関連法制度の整備
 
-**主要条項**:
+**生成AI利活用ガイドライン**: 「行政の進化と革新のための生成AIの調達・利活用に係るガイドライン」に基づき、政府における生成AI活用の枠組みを整備。各府省庁における適切な調達・利活用を促進。
 
-- **第1条（目的）**: 日本を「世界で最もAI開発・活用しやすい国」として位置づけ
-- **第2章（国の責務）**: AI研究開発投資の計画的実施義務
-- **第3章（産業支援措置）**: スタートアップ・中小企業向けAI活用支援制度
-- **第4章（安全・倫理基準）**: AI安全研究所設立と産業向けガイドライン策定
+#### 地方公共団体支援の方向性
 
-**民間への波及効果**:
+**AI活用支援**: 地方公共団体が「AIを活用し、各行政事務・サービスの質の維持・向上や業務効率化を図ることを支援するため、政府や地方公共団体と民間事業者との協業を加速させ、地方公共団体が利用しやすいAIサービスの開発を推進」する方針を明示。
 
-- **調達基準の統一**: 政府調達におけるAI品質基準が民間標準のベンチマークとして機能
-- **人材流動化**: 政府AI人材と民間の交流促進により、スキル向上と知識移転を加速
-- **実証環境提供**: 政府業務での実証結果を匿名化して民間企業の開発に活用
+**クラウド・エッジ技術への影響**:
 
-#### デジタル社会重点計画2025における位置づけ
+- **政府情報システム基盤の整備**: ガバメントクラウドを基盤とした政府AI基盤の構築により、クラウドファーストの原則に基づくシステム整備が加速
+- **地方自治体のAI活用促進**: 政府AI基盤を活用した地方公共団体向けAIサービスの提供により、地方行政のデジタル化とAI活用が促進される見込み
+- **民間事業者との協業**: 政府・地方自治体と民間事業者の協業加速により、AI・クラウド技術の実用化と普及が進展
 
-**戦略的優先分野**:
-1. **生成AI基盤**: ChatGPT等の汎用AIと業務特化AIの統合活用
-2. **量子技術連携**: 量子コンピューティングとの将来的統合を見据えた基盤設計
-3. **データ利活用**: 政府保有データの民間開放とAI学習データとしての活用促進
-4. **エッジコンピューティング**: 地方自治体・出先機関でのリアルタイム行政サービス実現
+### エッジAI技術の動向
 
-**クラウド・エッジ技術への含意**:
+**技術基盤の充実**:
 
-- **ハイブリッドクラウド需要**: セキュリティ要件により政府専用クラウドと民間クラウドの連携ニーズ拡大
-- **エッジAI市場創出**: 地方行政のデジタル化により、エッジAI需要が2026年以降急拡大予測
-- **標準化推進**: 政府利用を通じたAI・クラウド技術の事実上の標準化効果
+- 軽量化モデル（TensorFlow Lite、ONNX Runtime）の普及
+- 専用チップ（Google Edge TPU、Intel Movidius）の性能向上
+- フェデレーテッドラーニングによる分散学習の実用化
 
-### エッジAIの技術進化
+**新たな技術課題**:
 
-**現状**: 推論処理中心から学習機能搭載へ
-
-- 軽量化モデル（TensorFlow Lite、ONNX Runtime）
-- 専用チップ（Google Edge TPU、Intel Movidius）
-- フェデレーテッドラーニング
-
-**将来展望**: リアルタイム学習と適応的AI
-
-- 継続学習アルゴリズム
-- 分散協調学習
-- 説明可能AI（XAI）の実装
+- 継続学習アルゴリズムの実装
+- 分散協調学習における効率性向上
+- リアルタイム処理要件と精度のバランス最適化
 
 ### 5G/6G技術統合
 
@@ -800,15 +586,16 @@ lang: ja
 
 **現状**: ゼロトラストアーキテクチャの導入
 
-- 暗号化通信の標準化
-- デバイス認証強化
-- セキュリティ監視自動化
+- エッジデバイス間の暗号化通信標準化
+- クラウド・エッジ統合環境でのデバイス認証強化
+- 分散環境でのセキュリティ監視自動化
 
-**将来展望**: 量子暗号とホモモルフィック暗号
+**クラウドエッジ特有の課題対応**:
 
-- 量子耐性暗号アルゴリズム
-- プライバシー保護計算
-- ブロックチェーン統合
+- エッジコンピューティング環境でのデータ暗号化
+- 分散処理におけるプライバシー保護計算
+- クラウド・エッジ間の安全なデータ転送プロトコル
+- IoTデバイス群のセキュリティ管理統合
 
 # 各技術カテゴリの詳細分析 {#sec-detailed-analysis}
 
@@ -841,7 +628,11 @@ lang: ja
 **成長ドライバー**:
 
 1. IoTデバイス数の指数的増加（2030年予測：400億台[@cisco2020internet]）
-2. センサー技術の小型化・低コスト化
+2. センサー技術の進歩
+   - 小型化・低コスト化の継続的進展
+   - 高機能化：マルチセンシング（複数物理量同時計測）
+   - エッジAI統合：センサー内での前処理・判断機能
+   - 自己診断機能：故障予知・メンテナンス最適化
 3. 通信技術の多様化と高速化
 
 **課題と制約**:
@@ -1360,7 +1151,7 @@ lang: ja
 | 分野 | 日本企業シェア | 主要競合 | 技術的差別化要因 |
 |------|--------------|----------|-----------------|
 | PLC制御 | 25% | 独Siemens、米Rockwell | 高精度制御、省エネ |
-| 産業センサー | 35% | 独Bosch、米Honeywell | 小型化、高感度 |
+| 産業センサー | 35% | 独Bosch、米Honeywell | 小型化、高感度、多機能統合 |
 | 産業ロボット | 55% | 独KUKA、スイスABB | 精密制御、信頼性 |
 
 : 日本企業の技術的競争力 {#tbl-japan-competitiveness}
