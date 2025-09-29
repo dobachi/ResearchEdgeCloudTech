@@ -3,46 +3,8 @@ title: "クラウドエッジ技術に関する調査報告書"
 subtitle: "日本の産業界における戦略的機会の分析"
 author: "ResearchEdgeCloudTech調査チーム"
 date: "2025-09-27"
-format:
-  html:
-    toc: true
-    toc-depth: 4
-    number-sections: true
-    number-depth: 4
-    theme: cosmo
-    css: templates/styles/report-style.css
-    embed-resources: true
-  pdf:
-    toc: true
-    toc-depth: 4
-    number-sections: true
-    number-depth: 4
-    geometry:
-      - top=2cm
-      - bottom=2cm
-      - left=2cm
-      - right=2cm
-    fontsize: 10pt
-    documentclass: article
-    include-in-header:
-      - text: |
-          \usepackage{fancyhdr}
-          \pagestyle{fancy}
-          \fancyhf{}
-          \fancyhead[L]{クラウドエッジ技術調査報告書}
-          \fancyhead[R]{\thepage}
-          \fancyfoot[C]{ResearchEdgeCloudTech調査チーム}
 bibliography: references.bib
-csl: apa.csl
 link-citations: true
-crossref:
-  fig-title: "図"
-  tbl-title: "表"
-  eq-title: "式"
-  sec-prefix: "第"
-  fig-prefix: "図"
-  tbl-prefix: "表"
-  eq-prefix: "式"
 lang: ja
 ---
 

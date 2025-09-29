@@ -1,0 +1,228 @@
+name: Build and Deploy Research Report
+
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - 'reports/**'
+      - 'scripts/build-quarto-report.sh'
+      - '.github/workflows/build-report.yml'
+  pull_request:
+    branches: [ main ]
+    paths:
+      - 'reports/**'
+      - 'scripts/build-quarto-report.sh'
+      - '.github/workflows/build-report.yml'
+  workflow_dispatch:  # 手動実行可能
+
+env:
+  QUARTO_VERSION: "1.4.550"  # 使用するQuartoバージョン
+
+jobs:
+  build-html:
+    runs-on: ubuntu-latest
+    name: Build HTML Report
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+
+    - name: Setup Quarto
+      uses: quarto-dev/quarto-actions/setup@v2
+      with:
+        version: ${{ env.QUARTO_VERSION }}
+
+    - name: Install system dependencies
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y \
+          pandoc \
+          pandoc-citeproc \
+          librsvg2-bin \
+          fonts-noto-cjk \
+          fonts-noto-cjk-extra
+
+    - name: Verify Quarto installation
+      run: |
+        quarto --version
+        quarto check
+
+    - name: Build HTML report
+      run: |
+        chmod +x scripts/build-quarto-report.sh
+        scripts/build-quarto-report.sh html
+
+    - name: Upload HTML artifacts
+      uses: actions/upload-artifact@v4
+      with:
+        name: html-report
+        path: output/html/
+        retention-days: 30
+
+    - name: Generate build summary
+      run: |
+        echo "## 📊 HTML Build Results" >> $GITHUB_STEP_SUMMARY
+        echo "- Build Status: ✅ Success" >> $GITHUB_STEP_SUMMARY
+        echo "- Generated Files:" >> $GITHUB_STEP_SUMMARY
+        find output/html -name "*.html" | sed 's/^/  - /' >> $GITHUB_STEP_SUMMARY
+        echo "- File Sizes:" >> $GITHUB_STEP_SUMMARY
+        du -sh output/html/* | sed 's/^/  - /' >> $GITHUB_STEP_SUMMARY
+
+  build-pdf:
+    runs-on: ubuntu-latest
+    name: Build PDF Report
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+
+    - name: Setup Quarto
+      uses: quarto-dev/quarto-actions/setup@v2
+      with:
+        version: ${{ env.QUARTO_VERSION }}
+
+    - name: Install LaTeX and fonts
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y \
+          texlive-latex-base \
+          texlive-latex-recommended \
+          texlive-latex-extra \
+          texlive-fonts-recommended \
+          texlive-fonts-extra \
+          texlive-xetex \
+          texlive-luatex \
+          fonts-noto-cjk \
+          fonts-noto-cjk-extra \
+          pandoc \
+          pandoc-citeproc \
+          librsvg2-bin
+
+    - name: Verify installations
+      run: |
+        quarto --version
+        quarto check
+        xelatex --version | head -1
+
+    - name: Build PDF report
+      run: |
+        chmod +x scripts/build-quarto-report.sh
+        scripts/build-quarto-report.sh pdf
+
+    - name: Upload PDF artifacts
+      uses: actions/upload-artifact@v4
+      with:
+        name: pdf-report
+        path: output/pdf/
+        retention-days: 30
+
+    - name: Generate build summary
+      run: |
+        echo "## 📑 PDF Build Results" >> $GITHUB_STEP_SUMMARY
+        echo "- Build Status: ✅ Success" >> $GITHUB_STEP_SUMMARY
+        echo "- Generated Files:" >> $GITHUB_STEP_SUMMARY
+        find output/pdf -name "*.pdf" | sed 's/^/  - /' >> $GITHUB_STEP_SUMMARY
+        echo "- File Sizes:" >> $GITHUB_STEP_SUMMARY
+        du -sh output/pdf/* | sed 's/^/  - /' >> $GITHUB_STEP_SUMMARY
+
+  deploy-github-pages:
+    needs: [build-html]
+    runs-on: ubuntu-latest
+    name: Deploy to GitHub Pages
+    if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
+
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    steps:
+    - name: Download HTML artifacts
+      uses: actions/download-artifact@v4
+      with:
+        name: html-report
+        path: ./html-output
+
+    - name: Setup Pages
+      uses: actions/configure-pages@v4
+
+    - name: Upload to Pages
+      uses: actions/upload-pages-artifact@v3
+      with:
+        path: ./html-output
+
+    - name: Deploy to Pages
+      id: deployment
+      uses: actions/deploy-pages@v4
+
+    - name: Generate deployment summary
+      run: |
+        echo "## 🚀 Deployment Results" >> $GITHUB_STEP_SUMMARY
+        echo "- Deployment Status: ✅ Success" >> $GITHUB_STEP_SUMMARY
+        echo "- Page URL: ${{ steps.deployment.outputs.page_url }}" >> $GITHUB_STEP_SUMMARY
+        echo "- Auto-Deploy: Enabled for main branch" >> $GITHUB_STEP_SUMMARY
+
+  quality-checks:
+    runs-on: ubuntu-latest
+    name: Quality Checks
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+
+    - name: Setup Quarto
+      uses: quarto-dev/quarto-actions/setup@v2
+      with:
+        version: ${{ env.QUARTO_VERSION }}
+
+    - name: Install dependencies
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y pandoc librsvg2-bin
+
+    - name: Validate Quarto documents
+      run: |
+        cd reports
+        quarto render cloud_edge_technology_research.qmd --to html --output-dir ../temp-validation
+
+    - name: Check file structure
+      run: |
+        echo "Checking project structure..."
+        test -f reports/cloud_edge_technology_research.qmd || exit 1
+        test -f reports/_quarto.yml || exit 1
+        test -f reports/references.bib || exit 1
+        test -f scripts/build-quarto-report.sh || exit 1
+        echo "✅ File structure validation passed"
+
+    - name: Validate BibTeX
+      run: |
+        echo "Validating BibTeX references..."
+        # BibTeXファイルの基本的な構文チェック
+        python3 -c "
+        import re
+        with open('reports/references.bib', 'r') as f:
+            content = f.read()
+
+        # @記号で始まるエントリの数をチェック
+        entries = re.findall(r'^@\w+\{', content, re.MULTILINE)
+        print(f'Found {len(entries)} BibTeX entries')
+
+        # 基本的な構文チェック
+        if len(entries) == 0:
+            print('❌ No BibTeX entries found')
+            exit(1)
+        else:
+            print('✅ BibTeX structure validation passed')
+        "
+
+    - name: Generate quality report
+      run: |
+        echo "## 🔍 Quality Check Results" >> $GITHUB_STEP_SUMMARY
+        echo "- Quarto Validation: ✅ Passed" >> $GITHUB_STEP_SUMMARY
+        echo "- File Structure: ✅ Passed" >> $GITHUB_STEP_SUMMARY
+        echo "- BibTeX Validation: ✅ Passed" >> $GITHUB_STEP_SUMMARY
+        echo "- Project Health: ✅ Good" >> $GITHUB_STEP_SUMMARY

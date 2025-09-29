@@ -16,10 +16,25 @@ body {
   line-height: 1.8;
   color: var(--text-color);
   background-color: var(--bg-color);
-  max-width: 900px;
-  margin: 0 auto;
-  padding: 20px;
   font-size: 16px;
+}
+
+/* コンテンツ領域の幅設定 */
+.quarto-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* メインコンテンツエリア */
+#quarto-content {
+  max-width: none;
+}
+
+/* TOC有りの場合のコンテンツ幅調整 */
+body.quarto-sidebar-open #quarto-content {
+  max-width: none;
+  padding: 20px;
 }
 
 /* 見出し */
@@ -203,9 +218,19 @@ p strong:first-child:contains("考察") {
 }
 
 /* レスポンシブデザイン */
+@media (max-width: 1200px) {
+  .quarto-container {
+    max-width: 100%;
+    padding: 0 15px;
+  }
+}
+
 @media (max-width: 768px) {
+  .quarto-container {
+    padding: 0 10px;
+  }
+
   body {
-    padding: 15px;
     font-size: 14px;
   }
 
@@ -219,6 +244,9 @@ p strong:first-child:contains("考察") {
 
   table {
     font-size: 0.85em;
+    overflow-x: auto;
+    display: block;
+    white-space: nowrap;
   }
 
   th, td {

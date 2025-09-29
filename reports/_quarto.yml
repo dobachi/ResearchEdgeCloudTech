@@ -15,7 +15,6 @@ book:
   downloads: [pdf, epub]
 
   sidebar:
-    logo: "logo.png"
     search: true
     collapse-level: 3
 
@@ -30,9 +29,7 @@ book:
 
 format:
   html:
-    theme:
-      - cosmo
-      - custom.scss
+    theme: cosmo
     css: templates/styles/report-style.css
     toc: true
     toc-depth: 4
@@ -47,6 +44,10 @@ format:
     crossrefs-hover: true
     fig-responsive: true
     embed-resources: false
+    page-layout: full
+    max-width: 1200px
+    margin-left: auto
+    margin-right: auto
 
   pdf:
     documentclass: article
@@ -92,5 +93,5 @@ lang: ja
 execute:
   freeze: auto
 
-filters:
-  - pandoc-crossref
+# filters:
+#   - pandoc-crossref  # Quartoの組み込み機能を使用
