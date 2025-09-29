@@ -740,7 +740,7 @@ lang: ja
 
 - 予知保全システム：IoT・AI技術による故障予測と設備稼働率向上[@ey2020predictive_maintenance]
 - 製造実行システム（MES）統合：生産効率向上とトレーサビリティ確保[@meti2024monodukuri]
-- 品質管理システム（QMS）連携：AI画像認識による不良品検出と品質向上[@yano2024factory_digital]
+- 品質管理システム（QMS）連携：次世代型品質保証システムの構築[@yano2024factory_digital]
 - デジタルファクトリー：仮想工場との連動による設計-製造一気通貫プロセス[@meti2024monodukuri]
 
 **スマート生産システム**:
