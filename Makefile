@@ -36,23 +36,47 @@ check: ## 前提条件をチェック
 	@test -f $(REPORTS_DIR)/references.bib || (echo "❌ 参考文献ファイルが見つかりません" && exit 1)
 	@echo "✅ 全ての前提条件をクリア"
 
+# 図表生成
+.PHONY: generate-images
+generate-images: ## SVG図表を生成
+	@echo "🎨 SVG図表を生成中..."
+	@command -v node >/dev/null 2>&1 || (echo "❌ Node.js が見つかりません" && exit 1)
+	@test -f package.json || (echo "❌ package.json が見つかりません" && exit 1)
+	@npm install --silent
+	@npm run generate-svg
+	@echo "✅ SVG図表生成完了: reports/images/"
+
+# 図表強制生成（手動編集を上書き）
+.PHONY: generate-images-force
+generate-images-force: ## SVG図表を強制生成（手動編集を上書き）
+	@echo "⚠️  手動編集されたSVGを上書きします..."
+	@npm run generate-svg
+	@echo "✅ SVG図表強制生成完了"
+
 # HTML版生成
 .PHONY: html
-html: check ## HTML版を生成
+html: check generate-images ## HTML版を生成
 	@echo "📄 HTML版を生成中..."
+	@$(SCRIPTS_DIR)/build-quarto-report.sh html
+	@echo "✅ HTML版生成完了: $(OUTPUT_DIR)/html/"
+
+# HTML版生成（SVG生成スキップ）
+.PHONY: html-no-svg
+html-no-svg: check ## HTML版を生成（SVG生成をスキップ、手動編集保護）
+	@echo "📄 HTML版を生成中（SVGスキップ）..."
 	@$(SCRIPTS_DIR)/build-quarto-report.sh html
 	@echo "✅ HTML版生成完了: $(OUTPUT_DIR)/html/"
 
 # PDF版生成
 .PHONY: pdf
-pdf: check ## PDF版を生成
+pdf: check generate-images ## PDF版を生成
 	@echo "📑 PDF版を生成中..."
 	@$(SCRIPTS_DIR)/build-quarto-report.sh pdf
 	@echo "✅ PDF版生成完了: $(OUTPUT_DIR)/pdf/"
 
 # 全形式生成
 .PHONY: all
-all: check ## 全形式（HTML/PDF）を生成
+all: check generate-images ## 全形式（HTML/PDF）を生成
 	@echo "📊 全形式を生成中..."
 	@$(SCRIPTS_DIR)/build-quarto-report.sh all
 	@echo "✅ 全形式生成完了: $(OUTPUT_DIR)/"
@@ -61,6 +85,15 @@ all: check ## 全形式（HTML/PDF）を生成
 .PHONY: preview
 preview: check ## リアルタイムプレビューを開始
 	@echo "👀 リアルタイムプレビューを開始..."
+	@echo "ブラウザで http://localhost:3333 にアクセス"
+	@echo "停止するには Ctrl+C を押してください"
+	@cd $(REPORTS_DIR) && quarto preview cloud_edge_technology_research.qmd --port 3333
+
+# 手動編集保護プレビュー
+.PHONY: preview-safe
+preview-safe: check ## 手動編集を保護してプレビューを開始（SVG生成をスキップ）
+	@echo "👀 安全プレビューを開始（手動編集保護）..."
+	@echo "📝 SVG生成をスキップして手動編集を保護します"
 	@echo "ブラウザで http://localhost:3333 にアクセス"
 	@echo "停止するには Ctrl+C を押してください"
 	@cd $(REPORTS_DIR) && quarto preview cloud_edge_technology_research.qmd --port 3333
