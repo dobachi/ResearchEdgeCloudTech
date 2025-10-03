@@ -36,8 +36,6 @@ jobs:
       run: |
         sudo apt-get update
         sudo apt-get install -y \
-          pandoc \
-          pandoc-citeproc \
           librsvg2-bin \
           fonts-noto-cjk \
           fonts-noto-cjk-extra
@@ -94,8 +92,6 @@ jobs:
           texlive-luatex \
           fonts-noto-cjk \
           fonts-noto-cjk-extra \
-          pandoc \
-          pandoc-citeproc \
           librsvg2-bin
 
     - name: Verify installations
@@ -182,7 +178,7 @@ jobs:
     - name: Install dependencies
       run: |
         sudo apt-get update
-        sudo apt-get install -y pandoc librsvg2-bin
+        sudo apt-get install -y librsvg2-bin
 
     - name: Validate Quarto documents
       run: |
