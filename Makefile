@@ -55,31 +55,37 @@ generate-images-force: ## SVG図表を強制生成（手動編集を上書き）
 
 # HTML版生成
 .PHONY: html
-html: check generate-images ## HTML版を生成
+html: check ## HTML版を生成
 	@echo "📄 HTML版を生成中..."
-	@$(SCRIPTS_DIR)/build-quarto-report.sh html
-	@echo "✅ HTML版生成完了: $(OUTPUT_DIR)/html/"
-
-# HTML版生成（SVG生成スキップ）
-.PHONY: html-no-svg
-html-no-svg: check ## HTML版を生成（SVG生成をスキップ、手動編集保護）
-	@echo "📄 HTML版を生成中（SVGスキップ）..."
-	@$(SCRIPTS_DIR)/build-quarto-report.sh html
-	@echo "✅ HTML版生成完了: $(OUTPUT_DIR)/html/"
+	@cd $(REPORTS_DIR) && quarto render
+	@echo "✅ HTML版生成完了: $(REPORTS_DIR)/_book/"
+	@echo "出力先: $(REPORTS_DIR)/_book/index.html"
 
 # PDF版生成
 .PHONY: pdf
-pdf: check generate-images ## PDF版を生成
+pdf: check ## PDF版を生成
 	@echo "📑 PDF版を生成中..."
-	@$(SCRIPTS_DIR)/build-quarto-report.sh pdf
-	@echo "✅ PDF版生成完了: $(OUTPUT_DIR)/pdf/"
+	@cd $(REPORTS_DIR) && quarto render --to pdf
+	@echo "✅ PDF版生成完了: $(REPORTS_DIR)/_book/"
+	@echo "出力先: $(REPORTS_DIR)/_book/クラウドエッジ技術に関する調査報告書.pdf"
+
+# EPUB版生成
+.PHONY: epub
+epub: check ## EPUB版を生成
+	@echo "📱 EPUB版を生成中..."
+	@cd $(REPORTS_DIR) && quarto render --to epub
+	@echo "✅ EPUB版生成完了: $(REPORTS_DIR)/_book/"
+	@echo "出力先: $(REPORTS_DIR)/_book/クラウドエッジ技術に関する調査報告書.epub"
 
 # 全形式生成
 .PHONY: all
-all: check generate-images ## 全形式（HTML/PDF）を生成
+all: check ## 全形式（HTML/PDF/EPUB）を生成
 	@echo "📊 全形式を生成中..."
-	@$(SCRIPTS_DIR)/build-quarto-report.sh all
-	@echo "✅ 全形式生成完了: $(OUTPUT_DIR)/"
+	@cd $(REPORTS_DIR) && quarto render
+	@echo "✅ 全形式生成完了: $(REPORTS_DIR)/_book/"
+	@echo ""
+	@echo "出力ファイル:"
+	@ls -lh $(REPORTS_DIR)/_book/*.html $(REPORTS_DIR)/_book/*.pdf $(REPORTS_DIR)/_book/*.epub 2>/dev/null || true
 
 # プレビュー
 .PHONY: preview
@@ -87,16 +93,7 @@ preview: check ## リアルタイムプレビューを開始
 	@echo "👀 リアルタイムプレビューを開始..."
 	@echo "ブラウザで http://localhost:3333 にアクセス"
 	@echo "停止するには Ctrl+C を押してください"
-	@cd $(REPORTS_DIR) && quarto preview cloud_edge_technology_research.qmd --port 3333
-
-# 手動編集保護プレビュー
-.PHONY: preview-safe
-preview-safe: check ## 手動編集を保護してプレビューを開始（SVG生成をスキップ）
-	@echo "👀 安全プレビューを開始（手動編集保護）..."
-	@echo "📝 SVG生成をスキップして手動編集を保護します"
-	@echo "ブラウザで http://localhost:3333 にアクセス"
-	@echo "停止するには Ctrl+C を押してください"
-	@cd $(REPORTS_DIR) && quarto preview cloud_edge_technology_research.qmd --port 3333
+	@cd $(REPORTS_DIR) && quarto preview --port 3333
 
 # 開発サーバー
 .PHONY: serve
@@ -134,10 +131,8 @@ watch-pdf: check ## ファイル変更を監視してPDF自動ビルド
 .PHONY: clean
 clean: ## 生成ファイルを削除
 	@echo "🧹 生成ファイルをクリーンアップ中..."
-	@rm -rf $(OUTPUT_DIR)/
+	@rm -rf $(REPORTS_DIR)/_book/
 	@rm -rf $(REPORTS_DIR)/*_files/
-	@rm -f $(REPORTS_DIR)/*.html
-	@rm -f $(REPORTS_DIR)/*.pdf
 	@rm -f /tmp/quarto-build.log
 	@rm -f /tmp/quarto-build.lock
 	@echo "✅ クリーンアップ完了"
@@ -146,6 +141,8 @@ clean: ## 生成ファイルを削除
 .PHONY: distclean
 distclean: clean ## 全ての生成ファイル・キャッシュを削除
 	@echo "🧹 深いクリーンアップ中..."
+	@rm -rf $(REPORTS_DIR)/.quarto/
+	@rm -rf $(REPORTS_DIR)/_freeze/
 	@rm -rf .quarto/
 	@rm -rf _freeze/
 	@echo "✅ 深いクリーンアップ完了"

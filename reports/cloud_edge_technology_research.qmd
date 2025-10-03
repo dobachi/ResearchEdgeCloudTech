@@ -489,14 +489,7 @@ locale: locales-ja-JP.xml
 
 @sec-classification で示した6つのカテゴリは独立したものではなく、実際のソリューションでは複数の技術が組み合わされる：
 
-::: {#fig-tech-layers}
-
-```{=html}
-{{< include images/tech-diagram.svg >}}
-```
-
-クラウドエッジ技術の階層構造と相互関係
-:::
+![クラウドエッジ技術の階層構造と相互関係](images/tech-diagram.svg){#fig-tech-layers width=100%}
 
 この技術統合により実現される**主要な統合パターン**：
 
