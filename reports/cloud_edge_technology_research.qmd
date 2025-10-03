@@ -281,18 +281,19 @@ locale: locales-ja-JP.xml
 
 - **クラウドプラットフォーム**[@idc_iot_platforms_2024]:
   - 米国: AWS IoT Core[@aws_iot_core]、Microsoft Azure IoT Hub[@azure_iot_hub]、Google Cloud IoT Core（2023年8月サービス終了[@google_iot_core_shutdown]）、IBM Watson IoT（2024年サービス終了方向）
-  - 中国: Alibaba Cloud IoT Platform、Huawei Cloud IoT、Tencent Cloud IoT Hub
-  - 日本: NTTコミュニケーションズ Things Cloud、IIJ IoTサービス
+  - 中国: Alibaba Cloud IoT Platform[@alibaba_iot_platform]、Huawei Cloud IoT[@huawei_cloud_iot]、Tencent Cloud IoT Hub[@tencent_cloud_iot]
+  - 日本: NTTコミュニケーションズ Things Cloud[@ntt_things_cloud]、IIJ IoTサービス[@iij_iot_service]
 - **エッジゲートウェイ**:
-  - 米国: Intel NUC、Dell Edge Gateway、HP EdgeLine
-  - 欧州: Advantech ARK Series（台湾）
-  - 中国: Inspur Edge Gateway
-  - 日本: Raspberry Pi（英国財団）、コンテック、ぷらっとホーム
+  - 米国: Intel NUC[@intel_nuc]、Dell Edge Gateway[@dell_edge_gateway]、HP EdgeLine[@hp_edgeline]
+  - 欧州: Raspberry Pi（英国財団）[@raspberry_pi]
+  - 台湾: Advantech ARK Series[@advantech_ark]
+  - 中国: Inspur Edge Gateway[@inspur_edge]
+  - 日本: コンテック[@contec_gateway]、ぷらっとホーム[@plathome_gateway]
 - **通信モジュール**:
-  - 米国: Qualcomm IoT、Sierra Wireless、Telit
-  - 欧州: u-blox（スイス）、STMicroelectronics（伊仏）
-  - 中国: Quectel、Fibocom、MeiG Smart
-  - 日本: 村田製作所、京セラ
+  - 米国: Qualcomm IoT[@qualcomm_iot]、Sierra Wireless[@sierra_wireless]、Telit[@telit]
+  - 欧州: u-blox（スイス）[@ublox]、STMicroelectronics（伊仏）[@stmicroelectronics]
+  - 中国: Quectel[@quectel]、Fibocom[@fibocom]、MeiG Smart[@meig_smart]
+  - 日本: 村田製作所[@murata_iot]、京セラ[@kyocera_iot]
 
 ## 産業特化統合型（Industry-Specific Integration） {#sec-industry-specific}
 
@@ -329,35 +330,35 @@ locale: locales-ja-JP.xml
 ### 代表的製品・サービス
 
 - **製造業**[@gartner_iiot_platforms_2024]:
-  - 欧州: Siemens MindSphere（独）[@siemens_mindsphere]、Schneider Electric EcoStruxure（仏）、ABB Ability（スイス）
-  - 米国: GE Predix（2024年サービス終了[@ge_predix_shutdown]）、PTC ThingWorx、Rockwell Automation FactoryTalk
-  - 中国: Haier COSMOPlat、Midea M.IoT
-  - 日本: 日立Lumada、三菱電機e-F@ctory、ファナックFIELD system
+  - 欧州: Siemens MindSphere（独）[@siemens_mindsphere]、Schneider Electric EcoStruxure（仏）[@schneider_ecostruxure]、ABB Ability（スイス）[@abb_ability]
+  - 米国: GE Predix（2024年サービス終了[@ge_predix_shutdown]）、PTC ThingWorx[@ptc_thingworx]、Rockwell Automation FactoryTalk[@rockwell_factorytalk]
+  - 中国: Haier COSMOPlat[@haier_cosmoplat]、Midea M.IoT[@midea_iot]
+  - 日本: 日立Lumada[@hitachi_lumada]、三菱電機e-F@ctory[@mitsubishi_efactory]、ファナックFIELD system[@fanuc_field]
 - **交通・運輸業**:
-  - 欧州: HERE Technologies（独）、TomTom Telematics（蘭）、Kapsch TrafficCom（墺）
-  - 米国: Trimble Transportation、Geotab Fleet Management、Verizon Connect
-  - 中国: G7 IoT（易流科技）、Cainiao Network（菜鳥網絡）
-  - 日本: トヨタコネクティッド、日立Lumada、NTTデータ スマートモビリティ
+  - 欧州: HERE Technologies（独）[@here_technologies]、TomTom Telematics（蘭）[@tomtom_telematics]、Kapsch TrafficCom（墺）[@kapsch_trafficcom]
+  - 米国: Trimble Transportation[@trimble_transportation]、Geotab Fleet Management[@geotab_fleet]、Verizon Connect[@verizon_connect]
+  - 中国: G7 IoT（易流科技）[@g7_iot]、Cainiao Network（菜鳥網絡）[@cainiao_network]
+  - 日本: トヨタコネクティッド[@toyota_connected]、日立Lumada[@hitachi_lumada]、NTTデータ スマートモビリティ
 - **エネルギー業**:
-  - 欧州: ABB Ability（スイス）、Schneider EcoStruxure Grid（仏）、Siemens Energy（独）
-  - 米国: Honeywell Forge、GE Grid Solutions、Oracle Utilities
-  - 中国: State Grid Smart Grid、Envision Digital、Huawei FusionSolar
+  - 欧州: ABB Ability（スイス）[@abb_ability]、Schneider EcoStruxure Grid（仏）[@schneider_ecostruxure]、Siemens Energy（独）[@siemens_energy]
+  - 米国: Honeywell Forge[@honeywell_forge]、GE Grid Solutions[@ge_grid_solutions]、Oracle Utilities[@oracle_utilities]
+  - 中国: State Grid Smart Grid[@state_grid]、Envision Digital[@envision_digital]、Huawei FusionSolar[@huawei_fusionsolar]
   - 日本: 東芝エネルギーシステムズ、日立Lumada Energy、三菱電機MELFASEC-Q
 - **農業**:
-  - 欧州: CNH Industrial（伊）、AGCO Fuse（米/欧）
-  - 米国: John Deere Operations Center、Climate FieldView、Trimble Ag Software
-  - 中国: XAG（極飛科技）
-  - 日本: クボタKSAS、ヤンマー スマートアシスト、WAGRI農業データ連携基盤
+  - 欧州: CNH Industrial（伊）[@cnh_industrial]、AGCO Fuse（米/欧）[@agco_fuse]
+  - 米国: John Deere Operations Center[@john_deere_operations]、Climate FieldView[@climate_fieldview]、Trimble Ag Software[@trimble_ag]
+  - 中国: XAG（極飛科技）[@xag]
+  - 日本: クボタKSAS[@kubota_ksas]、ヤンマー スマートアシスト[@yanmar_smart_assist]、WAGRI農業データ連携基盤[@wagri_platform]
 - **医療**:
-  - 欧州: Philips HealthSuite（蘭）、Siemens Healthineers（独）
-  - 米国: GE Healthcare Edison、Medtronic CareLink
-  - 中国: United Imaging Healthcare
-  - 日本: 富士通HOPE/EGMAIN-GX、島津製作所CLAIRVIVO
+  - 欧州: Philips HealthSuite（蘭）[@philips_healthsuite]、Siemens Healthineers（独）[@siemens_healthineers]
+  - 米国: GE Healthcare Edison[@ge_healthcare_edison]、Medtronic CareLink[@medtronic_carelink]
+  - 中国: United Imaging Healthcare[@united_imaging]
+  - 日本: 富士通HOPE/EGMAIN-GX[@fujitsu_hope]、島津製作所CLAIRVIVO[@shimadzu_clairvivo]
 - **建設・インフラ**:
-  - 欧州: Bentley iTwin（英）、Trimble Connect（米/欧）
-  - 米国: Autodesk BIM 360、Procore、Oracle Aconex
-  - 中国: Glodon、China State Construction Digital Platform
-  - 日本: 大林組BIM/CIM、鹿島建設A4CSEL、清水建設Shimz Smart Site
+  - 欧州: Bentley iTwin（英）[@bentley_itwin]、Trimble Connect（米/欧）[@trimble_connect]
+  - 米国: Autodesk BIM 360[@autodesk_bim360]、Procore[@procore]、Oracle Aconex[@oracle_aconex]
+  - 中国: Glodon[@glodon]、China State Construction Digital Platform[@china_construction]
+  - 日本: 大林組BIM/CIM[@obayashi_bim]、鹿島建設A4CSEL[@kajima_a4csel]、清水建設Shimz Smart Site[@shimizu_smart_site]
 
 ## 汎用通信インフラ型（General Communication Infrastructure） {#sec-general-comm}
 
@@ -414,20 +415,20 @@ locale: locales-ja-JP.xml
 ### 代表的製品・サービス
 
 - **エッジクラウド**:
-  - 米国: Amazon Wavelength、Microsoft Azure Edge Zones、Google Cloud Distributed Cloud、IBM Edge Application Manager
-  - 欧州: Vodafone Edge Cloud、Deutsche Telekom MEC、Orange Edge Computing
-  - 中国: Alibaba Cloud ENS、Huawei Cloud IEF、Tencent Edge Zone
-  - 日本: NTTコミュニケーションズ Flexible InterConnect、富士通FUJITSU Cloud Service、日立Lumada
+  - 米国: Amazon Wavelength[@aws_wavelength]、Microsoft Azure Edge Zones[@azure_edge_zones]、Google Cloud Distributed Cloud[@google_distributed_cloud]、IBM Edge Application Manager[@ibm_edge]
+  - 欧州: Vodafone Edge Cloud[@vodafone_edge]、Deutsche Telekom MEC[@deutsche_telekom_mec]、Orange Edge Computing[@orange_edge]
+  - 中国: Alibaba Cloud ENS[@alibaba_ens]、Huawei Cloud IEF[@huawei_ief]、Tencent Edge Zone[@tencent_edge_zone]
+  - 日本: NTTコミュニケーションズ Flexible InterConnect、富士通FUJITSU Cloud Service、日立Lumada[@hitachi_lumada]
 - **CDN**:
-  - 米国: Amazon CloudFront、Cloudflare、Fastly、Akamai
-  - 欧州: Limelight Networks、CDN77（チェコ）
-  - 中国: Alibaba Cloud CDN、Tencent Cloud CDN、ChinaCache
+  - 米国: Amazon CloudFront[@cloudfront]、Cloudflare[@cloudflare]、Fastly[@fastly]、Akamai[@akamai]
+  - 欧州: Limelight Networks[@limelight]、CDN77（チェコ）[@cdn77]
+  - 中国: Alibaba Cloud CDN、Tencent Cloud CDN、ChinaCache[@chinacache]
   - 日本: IIJ CDN、NTTコミュニケーションズ Arcstar Universal One、KDDI Web Communications
 - **通信事業者MEC**:
-  - 欧州: Vodafone MEC、Deutsche Telekom Edge Cloud、Orange MEC、Telefonica Edge
-  - 米国: Verizon 5G Edge、AT&T MEC、T-Mobile Edge Cloud
-  - 中国: China Mobile Edge Computing、China Unicom MEC、China Telecom Edge Cloud
-  - 日本: NTTドコモ5G MEC、KDDI Edge Computing、ソフトバンクLocal 5G、楽天モバイルEdge Cloud
+  - 欧州: Vodafone MEC[@vodafone_edge]、Deutsche Telekom Edge Cloud[@deutsche_telekom_edge_cloud]、Orange MEC[@orange_mec]、Telefonica Edge[@telefonica_edge]
+  - 米国: Verizon 5G Edge[@verizon_5g_edge]、AT&T MEC[@att_mec]、T-Mobile Edge Cloud[@tmobile_edge]
+  - 中国: China Mobile Edge Computing[@china_mobile_edge]、China Unicom MEC[@china_unicom_mec]、China Telecom Edge Cloud[@china_telecom_edge]
+  - 日本: NTTドコモ5G MEC[@ntt_docomo_mec]、KDDI Edge Computing[@kddi_edge]、ソフトバンクLocal 5G[@softbank_local5g]、楽天モバイルEdge Cloud[@rakuten_edge]
 
 ## 産業通信統合型（Industrial Communication Integration） {#sec-industrial-comm}
 
@@ -483,29 +484,29 @@ locale: locales-ja-JP.xml
 ### 代表的製品・サービス
 
 - **ローカル5G/プライベート通信**:
-  - 欧州: Nokia Industrial 5G、Ericsson Private 5G、Siemens Private Networks
-  - 米国: Qualcomm Private Networks、Cisco Private 5G、Celona
-  - 中国: Huawei Industrial 5G、ZTE Private 5G、China Mobile Industries
-  - 日本: NEC産業用5G、富士通ローカル5G、NTTドコモローカル5G
+  - 欧州: Nokia Industrial 5G[@nokia_industrial_5g]、Ericsson Private 5G[@ericsson_private_5g]、Siemens Private Networks[@siemens_private_networks]
+  - 米国: Qualcomm Private Networks[@qualcomm_private_5g]、Cisco Private 5G[@cisco_private_5g]、Celona[@celona]
+  - 中国: Huawei Industrial 5G、ZTE Private 5G[@zte_private_5g]、China Mobile Industries
+  - 日本: NEC産業用5G、富士通ローカル5G、NTTドコモローカル5G[@ntt_docomo_mec]
 - **産業用通信・ネットワーク**:
-  - 欧州: Siemens SCALANCE、Hirschmann Industrial Networking、Phoenix Contact、Beckhoff EtherCAT
-  - 米国: Cisco Industrial Ethernet、Rockwell Automation Stratix、Moxa Industrial Networking
-  - 中国: Huawei Industrial Switch、H3C Industrial Network
-  - 日本: SORACOM Arc、オムロンSYSMAC、三菱電機CC-Link
+  - 欧州: Siemens SCALANCE[@siemens_scalance]、Hirschmann Industrial Networking[@hirschmann]、Phoenix Contact[@phoenix_contact]、Beckhoff EtherCAT[@beckhoff_ethercat]
+  - 米国: Cisco Industrial Ethernet[@cisco_industrial_ethernet]、Rockwell Automation Stratix、Moxa Industrial Networking[@moxa]
+  - 中国: Huawei Industrial Switch、H3C Industrial Network[@h3c]
+  - 日本: SORACOM Arc[@soracom_arc]、オムロンSYSMAC、三菱電機CC-Link
 - **TSN・確定的通信**:
-  - 欧州: Siemens PROFINET、Beckhoff EtherCAT-TSN、Hirschmann TSN、B&R TSN、TTTech TSN（墺）
-  - 米国: Intel TSN、Cisco TSN、National Instruments TSN、Rockwell TSN
-  - 日本: 横河電機CENTUM、日立Harmonas-DEO
+  - 欧州: Siemens PROFINET、Beckhoff EtherCAT-TSN[@beckhoff_ethercat]、Hirschmann TSN[@hirschmann]、B&R TSN、TTTech TSN（墺）[@tttech]
+  - 米国: Intel TSN、Cisco TSN、National Instruments TSN[@national_instruments]、Rockwell TSN
+  - 日本: 横河電機CENTUM、日立Harmonas-DEO[@hitachi_lumada]
 - **産業用エッジAI**:
-  - 米国: NVIDIA Jetson AGX Industrial、Intel OpenVINO、Qualcomm Industrial IoT、AMD Embedded
+  - 米国: NVIDIA Jetson AGX Industrial[@nvidia_jetson_industrial]、Intel OpenVINO[@intel_openvino]、Qualcomm Industrial IoT[@qualcomm_iot]、AMD Embedded[@amd_embedded]
   - 欧州: ARM Industrial IoT（英）、Siemens Industrial Edge
-  - 中国: Huawei Atlas Edge、Horizon Robotics Journey
-  - 日本: 日立Vantara、NECエッジAI、富士通Zinrai、東芝RECAIUS
+  - 中国: Huawei Atlas Edge[@huawei_atlas]、Horizon Robotics Journey[@horizon_robotics]
+  - 日本: 日立Vantara[@hitachi_lumada]、NECエッジAI、富士通Zinrai、東芝RECAIUS
 - **産業用セキュリティ・ゲートウェイ**:
-  - 欧州: Fortinet FortiGate Rugged、Claroty（イスラエル）、Nozomi Networks（スイス）
-  - 米国: Palo Alto Networks Industrial、Cisco ISA、Rockwell ThinManager
+  - 欧州: Fortinet FortiGate Rugged[@fortinet_rugged]、Claroty（イスラエル）[@claroty]、Nozomi Networks（スイス）[@nozomi_networks]
+  - 米国: Palo Alto Networks Industrial[@palo_alto_industrial]、Cisco ISA、Rockwell ThinManager
   - 中国: Huawei Industrial Firewall
-  - 日本: トレンドマイクロ TXOne Networks、NEC産業制御セキュリティ
+  - 日本: トレンドマイクロ TXOne Networks[@trendmicro_txone]、NEC産業制御セキュリティ
 
 ## 汎用プラットフォーム型（General Platform-as-a-Service） {#sec-general-platform}
 
@@ -561,8 +562,8 @@ locale: locales-ja-JP.xml
 ### 代表的製品・サービス
 
 - **ハイブリッド・マルチクラウドプラットフォーム**:
-  - 米国: Google Anthos、Red Hat OpenShift、VMware Tanzu、HPE GreenLake
-  - 欧州: SUSE Rancher（独）、Canonical MicroK8s（英）
+  - 米国: Google Anthos[@google_anthos]、Red Hat OpenShift[@redhat_openshift]、VMware Tanzu[@vmware_tanzu]、HPE GreenLake[@hpe_greenlake]
+  - 欧州: SUSE Rancher（独）[@suse_rancher]、Canonical MicroK8s（英）
   - 中国: Alibaba Cloud Hybrid、Huawei Cloud Stack、Tencent Cloud TCE
   - 日本: 富士通Hybrid IT Service、日立JP1/Integrated Management、NEC Cloud Platform
 - **コンテナオーケストレーション**:
@@ -571,12 +572,12 @@ locale: locales-ja-JP.xml
   - 中国: Alibaba Container Service (ACK)、Tencent TKE、Huawei CCE
   - 日本: NTTコミュニケーションズ Container Service、富士通Cloud Service for OSS、さくらのクラウド Kubernetes
 - **エッジAI/ML推論プラットフォーム**:
-  - 米国: AWS SageMaker Edge、Google Vertex AI、Microsoft Azure ML、NVIDIA AI Enterprise
+  - 米国: AWS SageMaker Edge[@aws_sagemaker_edge]、Google Vertex AI、Microsoft Azure ML[@azure_ml]、NVIDIA AI Enterprise
   - 欧州: SAP AI Core（独）
-  - 中国: Alibaba PAI、Baidu PaddlePaddle、Tencent TI Platform
+  - 中国: Alibaba PAI、Baidu PaddlePaddle[@baidu_paddlepaddle]、Tencent TI Platform
   - 日本: 富士通Zinrai、日立Lumada Data Science Lab、NECエッジAI、Preferred Networks PFN
 - **分散データ処理プラットフォーム**:
-  - 米国: Cloudera Data Platform、Databricks、Confluent (Kafka)
+  - 米国: Cloudera Data Platform[@cloudera]、Databricks[@databricks_platform]、Confluent (Kafka)[@confluent_kafka]
   - 欧州: Ververica (Apache Flink)（独）
   - 中国: Alibaba Realtime Compute、Tencent TBDS
   - 日本: NTTデータ Enterprise Data Platform、日立Lumada DataOps
@@ -619,12 +620,12 @@ locale: locales-ja-JP.xml
 
 ### 代表的製品・サービス
 
-- **製造業**: Siemens Xcelerator、Rockwell FactoryTalk、三菱電機e-F@ctory、オムロンSYSMAC、ファナック FIELD system、安川電機モーションネット、キーエンスCV-Xシリーズ、横河電機CENTUMシリーズ、PTC ThingWorx、GE Predix、Schneider Electric EcoStruxure、富士電機MICREX-VieW、日立製作所Lumada Manufacturing、東芝インダストリアルIoTソリューション、アズビル建物管理システム
-- **交通・運輸**: SAP Transportation Management、Oracle Transportation Management、トヨタコネクティッド モビリティサービスプラットフォーム、HERE Technologies Connected Vehicle、TomTom Telematics WEBFLEET、日立製作所Lumada Transport、NTTデータ スマートモビリティ、ナビタイムジャパン法人向けソリューション、SBドライブ 自動運転サービス、デンソー Connected Services、MaaS Tech Japan プラットフォーム、JR東日本 TRAIN SUITE、小田急電鉄 MaaSアプリ
-- **エネルギー**: Schneider Electric EcoStruxure、ABB Ability、東京ガス IoTプラットフォーム、東京電力TEPCO Energy Partner、関西電力 HEMSサービス、中部電力 カテエネ、九州電力 キューデン・エコソル、三菱電機 Energy Cloud、NECエネルギークラウド、日立製作所Lumada Energy、富士通 エネルギーマネジメントソリューション、東芝エネルギーシステムズ EMS、オムロンエネルギーマネジメント、パナソニック エネルギー統合システム
-- **農業**: John Deere Operations Center、Climate FieldView、NTTコムウェア農業クラウド、クボタ KSAS（営農支援システム）、ヤンマー スマートアシスト、ソフトバンク e-kakashi、富士通 Akisai（秋菜）、日立製作所 農業IoTソリューション、パナソニック アグリテックソリューション、NEC 農業ICTソリューション、WAGRI農業データ連携基盤、イノチオアグリ 統合環境制御システム、井関農機 夢ある農業総合支援、三菱マヒンドラ農機 営農支援、トヨタ 豊作計画
-- **医療**: Epic Systems、Cerner HealtheLife、富士通 HOPE LifeMark-HX、オリンパス 内視鏡統合システム、テルモ 医療機器統合管理、島津製作所 医用画像統合システム、日立製作所 医療IoTソリューション、NEC 医療情報統合基盤、東芝 医用画像情報システム、富士フイルム SYNAPSE、キヤノンメディカル Vitrea、シスメックス 検査統合システム、PHC 電子カルテシステム、ソフトバンク 遠隔医療プラットフォーム、パナソニック ヘルスケアソリューション
-- **建設・インフラ**: Bentley iTwin、Autodesk Construction Cloud、NTTコムウェア Smart World、大林組 建設DXプラットフォーム、鹿島建設 A4CSEL、竹中工務店 ADVANCE、清水建設 Shimz Smart Site、大成建設 T-iROBO®、日立製作所 社会インフラ統合ソリューション、三菱電機 ビル管理統合システム、東芝インフラシステムズ 統合監視システム、富士通 公共インフラソリューション、NEC 社会インフラソリューション、パナソニック スマートシティソリューション、コマツ スマートコンストラクション
+- **製造業**: Siemens Xcelerator[@siemens_xcelerator]、Rockwell FactoryTalk[@rockwell_factorytalk]、三菱電機e-F@ctory[@mitsubishi_efactory]、オムロンSYSMAC、ファナック FIELD system[@fanuc_field]、安川電機モーションネット、キーエンスCV-Xシリーズ、横河電機CENTUMシリーズ、PTC ThingWorx[@ptc_thingworx]、GE Predix[@ge_predix_shutdown]、Schneider Electric EcoStruxure[@schneider_ecostruxure]、富士電機MICREX-VieW、日立製作所Lumada Manufacturing[@hitachi_lumada]、東芝インダストリアルIoTソリューション、アズビル建物管理システム
+- **交通・運輸**: SAP Transportation Management、Oracle Transportation Management、トヨタコネクティッド モビリティサービスプラットフォーム[@toyota_connected]、HERE Technologies Connected Vehicle[@here_technologies]、TomTom Telematics WEBFLEET、日立製作所Lumada Transport[@hitachi_lumada]、NTTデータ スマートモビリティ、ナビタイムジャパン法人向けソリューション、SBドライブ 自動運転サービス、デンソー Connected Services、MaaS Tech Japan プラットフォーム、JR東日本 TRAIN SUITE、小田急電鉄 MaaSアプリ
+- **エネルギー**: Schneider Electric EcoStruxure[@schneider_ecostruxure]、ABB Ability[@abb_ability]、東京ガス IoTプラットフォーム、東京電力TEPCO Energy Partner、関西電力 HEMSサービス、中部電力 カテエネ、九州電力 キューデン・エコソル、三菱電機 Energy Cloud、NECエネルギークラウド、日立製作所Lumada Energy[@hitachi_lumada]、富士通 エネルギーマネジメントソリューション、東芝エネルギーシステムズ EMS、オムロンエネルギーマネジメント、パナソニック エネルギー統合システム
+- **農業**: John Deere Operations Center[@john_deere_operations]、Climate FieldView[@climate_fieldview]、NTTコムウェア農業クラウド、クボタ KSAS（営農支援システム）[@kubota_ksas]、ヤンマー スマートアシスト[@yanmar_smart_assist]、ソフトバンク e-kakashi、富士通 Akisai（秋菜）、日立製作所 農業IoTソリューション[@hitachi_lumada]、パナソニック アグリテックソリューション、NEC 農業ICTソリューション、WAGRI農業データ連携基盤[@wagri_platform]、イノチオアグリ 統合環境制御システム、井関農機 夢ある農業総合支援、三菱マヒンドラ農機 営農支援、トヨタ 豊作計画
+- **医療**: Epic Systems、Cerner HealtheLife、富士通 HOPE LifeMark-HX[@fujitsu_hope]、オリンパス 内視鏡統合システム、テルモ 医療機器統合管理、島津製作所 医用画像統合システム[@shimadzu_clairvivo]、日立製作所 医療IoTソリューション[@hitachi_lumada]、NEC 医療情報統合基盤、東芝 医用画像情報システム、富士フイルム SYNAPSE、キヤノンメディカル Vitrea、シスメックス 検査統合システム、PHC 電子カルテシステム、ソフトバンク 遠隔医療プラットフォーム、パナソニック ヘルスケアソリューション
+- **建設・インフラ**: Bentley iTwin[@bentley_itwin]、Autodesk Construction Cloud[@autodesk_bim360]、NTTコムウェア Smart World、大林組 建設DXプラットフォーム[@obayashi_bim]、鹿島建設 A4CSEL[@kajima_a4csel]、竹中工務店 ADVANCE、清水建設 Shimz Smart Site[@shimizu_smart_site]、大成建設 T-iROBO®、日立製作所 社会インフラ統合ソリューション[@hitachi_lumada]、三菱電機 ビル管理統合システム、東芝インフラシステムズ 統合監視システム、富士通 公共インフラソリューション、NEC 社会インフラソリューション、パナソニック スマートシティソリューション、コマツ スマートコンストラクション
 
 ## 技術間の相互関係
 
