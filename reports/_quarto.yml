@@ -50,7 +50,7 @@ format:
     margin-right: auto
 
   pdf:
-    documentclass: article
+    documentclass: book
     toc: true
     toc-depth: 4
     number-sections: true
@@ -72,10 +72,17 @@ format:
           \fancyhf{}
           \fancyhead[L]{クラウドエッジ技術調査報告書}
           \fancyhead[R]{\thepage}
-          \fancyfoot[C]{ResearchEdgeCloudTech調査チーム}
+          \fancyfoot[C]{dobachi}
+
+  epub:
+    toc: true
+    toc-depth: 4
+    number-sections: true
+    number-depth: 4
 
 bibliography: references.bib
-csl: https://www.zotero.org/styles/apa-6th-edition
+csl: https://www.zotero.org/styles/apa
+locale: locales-ja-JP.xml
 link-citations: true
 
 crossref:
