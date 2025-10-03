@@ -82,21 +82,21 @@ echo "🔨 Quartoドキュメントをビルド中..."
 case "$FORMAT" in
     "html")
         echo "📄 HTML版を生成中..."
-        quarto render cloud_edge_technology_research.qmd --to html --output-dir "$OUTPUT_DIR/html"
+        quarto render --to html --output-dir "$OUTPUT_DIR/html"
         echo "✅ HTML版の生成完了: $OUTPUT_DIR/html/"
         ;;
     "pdf")
         echo "📑 PDF版を生成中..."
-        quarto render cloud_edge_technology_research.qmd --to pdf --output-dir "$OUTPUT_DIR/pdf"
+        quarto render --to pdf --output-dir "$OUTPUT_DIR/pdf"
         echo "✅ PDF版の生成完了: $OUTPUT_DIR/pdf/"
         ;;
     "all")
         echo "📄 HTML版を生成中..."
-        quarto render cloud_edge_technology_research.qmd --to html --output-dir "$OUTPUT_DIR/html"
+        quarto render --to html --output-dir "$OUTPUT_DIR/html"
         echo "✅ HTML版の生成完了"
 
         echo "📑 PDF版を生成中..."
-        quarto render cloud_edge_technology_research.qmd --to pdf --output-dir "$OUTPUT_DIR/pdf"
+        quarto render --to pdf --output-dir "$OUTPUT_DIR/pdf"
         echo "✅ PDF版の生成完了"
 
         echo "✅ 全形式の生成完了: $OUTPUT_DIR/"

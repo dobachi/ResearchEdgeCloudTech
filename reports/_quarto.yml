@@ -1,6 +1,7 @@
 project:
   type: book
   title: "クラウドエッジ技術調査報告書"
+  output-dir: _book
 
 book:
   title: "クラウドエッジ技術に関する調査報告書"
