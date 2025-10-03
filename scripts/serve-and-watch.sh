@@ -167,39 +167,13 @@ main() {
     echo -e "${BLUE}🔨 初回ビルドを実行中...${NC}"
     "$SCRIPT_DIR/build-quarto-report.sh" "$FORMAT"
 
-    # 利用可能なサーバー方式を判定して起動
+    # Quartoプレビューサーバーを起動
     if command -v quarto &> /dev/null; then
         echo ""
-        echo -e "${CYAN}選択可能なサーバー方式:${NC}"
-        echo -e "${GREEN}1. Quartoプレビューサーバー (推奨)${NC}"
-        echo -e "   - 自動リフレッシュ機能"
-        echo -e "   - リアルタイム更新"
-        echo -e "   - 高度なプレビュー機能"
-        echo ""
-        echo -e "${YELLOW}2. 静的サーバー + ファイル監視${NC}"
-        echo -e "   - 手動リフレッシュ"
-        echo -e "   - シンプルな静的配信"
-        echo ""
-
-        read -p "どちらを使用しますか？ (1/2) [デフォルト: 1]: " choice
-        choice=${choice:-1}
-
-        case $choice in
-            1)
-                start_quarto_preview
-                ;;
-            2)
-                start_static_server
-                start_file_watcher
-                ;;
-            *)
-                echo -e "${RED}❌ 無効な選択です。Quartoプレビューサーバーを起動します。${NC}"
-                start_quarto_preview
-                ;;
-        esac
+        start_quarto_preview
     else
-        start_static_server
-        start_file_watcher
+        echo -e "${RED}❌ エラー: Quarto CLIが見つかりません${NC}"
+        exit 1
     fi
 
     echo ""
