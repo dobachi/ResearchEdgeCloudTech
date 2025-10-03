@@ -15,7 +15,7 @@ title: "クラウドエッジ技術調査報告書ポータル"
 
 ## 報告書アクセス
 
-**[📊 完全版報告書を読む](cloud_edge_technology_research.qmd)**
+**[📊 報告書を読む](cloud_edge_technology_research.qmd)**
 
 ## 目次ハイライト
 
@@ -45,7 +45,7 @@ title: "クラウドエッジ技術調査報告書ポータル"
 
 ## プロジェクト情報
 
-- **作成**: ResearchEdgeCloudTech調査チーム
+- **作成**: dobachi
 - **更新日**: 2025年9月27日
 - **バージョン**: 1.0
 - **ライセンス**: Apache-2.0

@@ -5,7 +5,7 @@ project:
 book:
   title: "クラウドエッジ技術に関する調査報告書"
   subtitle: "日本の産業界における戦略的機会の分析"
-  author: "ResearchEdgeCloudTech調査チーム"
+  author: "dobachi"
   date: "2025-09-27"
 
   chapters:
@@ -24,7 +24,7 @@ book:
     search: true
 
   page-footer:
-    left: "© 2025 ResearchEdgeCloudTech調査チーム"
+    left: "© 2025 dobachi"
     right: "Built with Quarto"
 
 format:
