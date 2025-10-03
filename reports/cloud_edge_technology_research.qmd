@@ -235,6 +235,16 @@ locale: locales-ja-JP.xml
 
 ## 汎用デバイス連携型（General Device-to-Cloud Integration） {#sec-general-device}
 
+:::{.callout-note appearance="simple"}
+## 📍 技術分類マトリックス上の位置
+
+| レイヤー＼特化度 | 汎用型 | 産業特化型 |
+|-----------------|--------|-----------|
+| **デバイス層** | **👉 汎用デバイス連携型** | 産業特化統合型 |
+| **ネットワーク層** | 汎用通信インフラ型 | 産業通信統合型 |
+| **プラットフォーム層** | 汎用プラットフォーム型 | 産業プラットフォーム型 |
+:::
+
 **概要**: 汎用IoTデバイスからクラウドへのデータ連携を最適化する技術群。業界非依存のスマートホーム、スマートビル、小規模IoTシステム向けの標準化されたデバイス統合技術
 
 ### 技術分野別詳細
@@ -269,11 +279,32 @@ locale: locales-ja-JP.xml
 
 ### 代表的製品・サービス
 
-- **クラウドプラットフォーム**: AWS IoT Core、Microsoft Azure IoT Hub、Google Cloud IoT Core、IBM Watson IoT
-- **エッジゲートウェイ**: Intel NUC、Raspberry Pi、NVIDIA Jetson
-- **通信モジュール**: Qualcomm IoT、u-blox、Sierra Wireless
+- **クラウドプラットフォーム**[@idc_iot_platforms_2024]:
+  - 米国: AWS IoT Core[@aws_iot_core]、Microsoft Azure IoT Hub[@azure_iot_hub]、Google Cloud IoT Core（2023年8月サービス終了[@google_iot_core_shutdown]）、IBM Watson IoT（2024年サービス終了方向）
+  - 中国: Alibaba Cloud IoT Platform、Huawei Cloud IoT、Tencent Cloud IoT Hub
+  - 日本: NTTコミュニケーションズ Things Cloud、IIJ IoTサービス
+- **エッジゲートウェイ**:
+  - 米国: Intel NUC、Dell Edge Gateway、HP EdgeLine
+  - 欧州: Advantech ARK Series（台湾）
+  - 中国: Inspur Edge Gateway
+  - 日本: Raspberry Pi（英国財団）、コンテック、ぷらっとホーム
+- **通信モジュール**:
+  - 米国: Qualcomm IoT、Sierra Wireless、Telit
+  - 欧州: u-blox（スイス）、STMicroelectronics（伊仏）
+  - 中国: Quectel、Fibocom、MeiG Smart
+  - 日本: 村田製作所、京セラ
 
 ## 産業特化統合型（Industry-Specific Integration） {#sec-industry-specific}
+
+:::{.callout-note appearance="simple"}
+## 📍 技術分類マトリックス上の位置
+
+| レイヤー＼特化度 | 汎用型 | 産業特化型 |
+|-----------------|--------|-----------|
+| **デバイス層** | 汎用デバイス連携型 | **👉 産業特化統合型** |
+| **ネットワーク層** | 汎用通信インフラ型 | 産業通信統合型 |
+| **プラットフォーム層** | 汎用プラットフォーム型 | 産業プラットフォーム型 |
+:::
 
 **概要**: 各産業分野の専門要件に特化したデバイス・システム統合技術。産業ごとの固有の運用環境、安全要件、規制対応に最適化された技術群を提供
 
@@ -297,14 +328,48 @@ locale: locales-ja-JP.xml
 
 ### 代表的製品・サービス
 
-- **製造業**: Siemens MindSphere、GE Predix、PTC ThingWorx、Schneider Electric EcoStruxure
-- **交通・運輸業**: HERE Technologies、TomTom Telematics、NTTデータ スマートモビリティ、ナビタイムジャパン、ジョルダン乗換案内、SBドライブ、日立製作所Lumada、MaaS Tech Japan、トヨタコネクティッド、デンソーモビリティサービス
-- **エネルギー業**: Honeywell Forge、ABB Ability、東芝エネルギーシステムズ FLEXIBLE SOLUTION、東京電力パワーグリッド系統運用システム、関西電力送配電 配電自動化システム、中部電力パワーグリッド EMS、三菱電機 MELFASEC-Q、日立製作所Lumada Energy、NECエネルギーリソースアグリゲータ、ENEOSデジタルソリューション
-- **農業**: John Deere Operations Center、Climate FieldView、クボタ KSAS、ヤンマー スマートアシスト、ソフトバンク e-kakashi、NTTコミュニケーションズ Things Cloud、WAGRI農業データ連携基盤、イノチオアグリ統合環境制御
-- **医療**: Philips HealthSuite、GE Healthcare Edison、富士通 HOPE/EGMAIN-GX、オリンパス ENDOALPHA、テルモ Heartsheet、島津製作所 CLAIRVIVO、メディカロイド hinotori、シスメックス CN-Series
-- **建設・インフラ**: Bentley iTwin、Autodesk BIM 360、大林組 BIM/CIM統合プラットフォーム、鹿島建設 A4CSEL、竹中工務店 ADVANCE、清水建設 Shimz Smart Site、大成建設 T-iROBO®、日立製作所 Lumada
+- **製造業**[@gartner_iiot_platforms_2024]:
+  - 欧州: Siemens MindSphere（独）[@siemens_mindsphere]、Schneider Electric EcoStruxure（仏）、ABB Ability（スイス）
+  - 米国: GE Predix（2024年サービス終了[@ge_predix_shutdown]）、PTC ThingWorx、Rockwell Automation FactoryTalk
+  - 中国: Haier COSMOPlat、Midea M.IoT
+  - 日本: 日立Lumada、三菱電機e-F@ctory、ファナックFIELD system
+- **交通・運輸業**:
+  - 欧州: HERE Technologies（独）、TomTom Telematics（蘭）、Kapsch TrafficCom（墺）
+  - 米国: Trimble Transportation、Geotab Fleet Management、Verizon Connect
+  - 中国: G7 IoT（易流科技）、Cainiao Network（菜鳥網絡）
+  - 日本: トヨタコネクティッド、日立Lumada、NTTデータ スマートモビリティ
+- **エネルギー業**:
+  - 欧州: ABB Ability（スイス）、Schneider EcoStruxure Grid（仏）、Siemens Energy（独）
+  - 米国: Honeywell Forge、GE Grid Solutions、Oracle Utilities
+  - 中国: State Grid Smart Grid、Envision Digital、Huawei FusionSolar
+  - 日本: 東芝エネルギーシステムズ、日立Lumada Energy、三菱電機MELFASEC-Q
+- **農業**:
+  - 欧州: CNH Industrial（伊）、AGCO Fuse（米/欧）
+  - 米国: John Deere Operations Center、Climate FieldView、Trimble Ag Software
+  - 中国: XAG（極飛科技）
+  - 日本: クボタKSAS、ヤンマー スマートアシスト、WAGRI農業データ連携基盤
+- **医療**:
+  - 欧州: Philips HealthSuite（蘭）、Siemens Healthineers（独）
+  - 米国: GE Healthcare Edison、Medtronic CareLink
+  - 中国: United Imaging Healthcare
+  - 日本: 富士通HOPE/EGMAIN-GX、島津製作所CLAIRVIVO
+- **建設・インフラ**:
+  - 欧州: Bentley iTwin（英）、Trimble Connect（米/欧）
+  - 米国: Autodesk BIM 360、Procore、Oracle Aconex
+  - 中国: Glodon、China State Construction Digital Platform
+  - 日本: 大林組BIM/CIM、鹿島建設A4CSEL、清水建設Shimz Smart Site
 
 ## 汎用通信インフラ型（General Communication Infrastructure） {#sec-general-comm}
+
+:::{.callout-note appearance="simple"}
+## 📍 技術分類マトリックス上の位置
+
+| レイヤー＼特化度 | 汎用型 | 産業特化型 |
+|-----------------|--------|-----------|
+| **デバイス層** | 汎用デバイス連携型 | 産業特化統合型 |
+| **ネットワーク層** | **👉 汎用通信インフラ型** | 産業通信統合型 |
+| **プラットフォーム層** | 汎用プラットフォーム型 | 産業プラットフォーム型 |
+:::
 
 **概要**: 一般消費者・企業向け5G/6G等の次世代通信網エッジコンピューティング。パブリック通信インフラを活用した大規模・汎用的なエッジサービス提供技術
 
@@ -348,12 +413,33 @@ locale: locales-ja-JP.xml
 
 ### 代表的製品・サービス
 
-- **エッジクラウド**: Amazon Wavelength、Microsoft Azure Edge Zones、Google Cloud Distributed Cloud、NTTコミュニケーションズ Flexible InterConnect、富士通 FUJITSU Cloud Service、日立製作所 Lumada、NECクラウド、ソフトバンク Enterprise Cloud
-- **CDN**: Amazon CloudFront、Microsoft Azure CDN、Cloudflare、J-Stream CDNext、Fastly、IIJ CDN、NTTコミュニケーションズ Arcstar Universal One、KDDI Web Communications
-- **通信事業者MEC**: NTTドコモ5G MEC、KDDI Edge Computing、ソフトバンクLocal 5G、楽天モバイルEdge Cloud、NTTコミュニケーションズ Smart Data Platform、IIJクラウド
-- **日本独自プラットフォーム**: NTTドコモ docomo IoT Platform、KDDI IoT通信プラットフォーム、ソフトバンク IoT Platform X、IIJ IoTサービス、さくらインターネット IoT Platform、ニフクラ mobile backend
+- **エッジクラウド**:
+  - 米国: Amazon Wavelength、Microsoft Azure Edge Zones、Google Cloud Distributed Cloud、IBM Edge Application Manager
+  - 欧州: Vodafone Edge Cloud、Deutsche Telekom MEC、Orange Edge Computing
+  - 中国: Alibaba Cloud ENS、Huawei Cloud IEF、Tencent Edge Zone
+  - 日本: NTTコミュニケーションズ Flexible InterConnect、富士通FUJITSU Cloud Service、日立Lumada
+- **CDN**:
+  - 米国: Amazon CloudFront、Cloudflare、Fastly、Akamai
+  - 欧州: Limelight Networks、CDN77（チェコ）
+  - 中国: Alibaba Cloud CDN、Tencent Cloud CDN、ChinaCache
+  - 日本: IIJ CDN、NTTコミュニケーションズ Arcstar Universal One、KDDI Web Communications
+- **通信事業者MEC**:
+  - 欧州: Vodafone MEC、Deutsche Telekom Edge Cloud、Orange MEC、Telefonica Edge
+  - 米国: Verizon 5G Edge、AT&T MEC、T-Mobile Edge Cloud
+  - 中国: China Mobile Edge Computing、China Unicom MEC、China Telecom Edge Cloud
+  - 日本: NTTドコモ5G MEC、KDDI Edge Computing、ソフトバンクLocal 5G、楽天モバイルEdge Cloud
 
 ## 産業通信統合型（Industrial Communication Integration） {#sec-industrial-comm}
+
+:::{.callout-note appearance="simple"}
+## 📍 技術分類マトリックス上の位置
+
+| レイヤー＼特化度 | 汎用型 | 産業特化型 |
+|-----------------|--------|-----------|
+| **デバイス層** | 汎用デバイス連携型 | 産業特化統合型 |
+| **ネットワーク層** | 汎用通信インフラ型 | **👉 産業通信統合型** |
+| **プラットフォーム層** | 汎用プラットフォーム型 | 産業プラットフォーム型 |
+:::
 
 **概要**: 製造業・インフラ向け専用通信網とエッジコンピューティングの統合。産業固有の要求仕様（超低遅延、高信頼性、確定的通信）に特化した閉域ネットワーク技術
 
@@ -396,14 +482,42 @@ locale: locales-ja-JP.xml
 
 ### 代表的製品・サービス
 
-- **ローカル5G**: NEC産業用5G、富士通ローカル5G、Nokia Industrial 5G、Ericsson Private 5G、Qualcomm Private Networks、Samsung Private 5G、NTTドコモ ローカル5G、KDDI KDDI 5G、ソフトバンク Local 5G Enterprise
-- **産業用通信**: SORACOM Arc、Cisco Industrial Ethernet、Hirschmann Industrial Networking、Moxa Industrial Networking、Phoenix Contact FL SWITCH、Beckhoff EtherCAT、Siemens SCALANCE、ABB System 800xA、Schneider Electric ConneXium、Rockwell Automation StratixSeries
-- **TSN・確定的通信**: Intel TSN、Cisco TSN、B&R TSN、Siemens PROFINET、Beckhoff EtherCAT-TSN、Hirschmann TSN、National Instruments TSN、Kalray MPPA、TTTech TSN
-- **日本産業制御**: 三菱電機CC-Link、オムロンSYSMAC、キーエンスCV-X、横河電機CENTUM、富士電機MICREX-VieW、安川電機MP3000、ファナックFIELD system、日立製作所Harmonas-DEO、東芝 ProSecure、アズビル harmonasシリーズ
-- **産業用エッジAI**: NVIDIA Jetson AGX Industrial、Intel OpenVINO、Qualcomm Industrial IoT、AMD Embedded、ARM Industrial IoT、日立Vantara、NECエッジAI、富士通 Zinrai、東芝 RECAIUS
-- **産業IoTプラットフォーム**: PTC ThingWorx、GE Predix、Siemens MindSphere、Microsoft Azure IoT、Amazon AWS IoT Greengrass、IBM Watson IoT、Oracle IoT、SAP Leonardo IoT
+- **ローカル5G/プライベート通信**:
+  - 欧州: Nokia Industrial 5G、Ericsson Private 5G、Siemens Private Networks
+  - 米国: Qualcomm Private Networks、Cisco Private 5G、Celona
+  - 中国: Huawei Industrial 5G、ZTE Private 5G、China Mobile Industries
+  - 日本: NEC産業用5G、富士通ローカル5G、NTTドコモローカル5G
+- **産業用通信・ネットワーク**:
+  - 欧州: Siemens SCALANCE、Hirschmann Industrial Networking、Phoenix Contact、Beckhoff EtherCAT
+  - 米国: Cisco Industrial Ethernet、Rockwell Automation Stratix、Moxa Industrial Networking
+  - 中国: Huawei Industrial Switch、H3C Industrial Network
+  - 日本: SORACOM Arc、オムロンSYSMAC、三菱電機CC-Link
+- **TSN・確定的通信**:
+  - 欧州: Siemens PROFINET、Beckhoff EtherCAT-TSN、Hirschmann TSN、B&R TSN、TTTech TSN（墺）
+  - 米国: Intel TSN、Cisco TSN、National Instruments TSN、Rockwell TSN
+  - 日本: 横河電機CENTUM、日立Harmonas-DEO
+- **産業用エッジAI**:
+  - 米国: NVIDIA Jetson AGX Industrial、Intel OpenVINO、Qualcomm Industrial IoT、AMD Embedded
+  - 欧州: ARM Industrial IoT（英）、Siemens Industrial Edge
+  - 中国: Huawei Atlas Edge、Horizon Robotics Journey
+  - 日本: 日立Vantara、NECエッジAI、富士通Zinrai、東芝RECAIUS
+- **産業用セキュリティ・ゲートウェイ**:
+  - 欧州: Fortinet FortiGate Rugged、Claroty（イスラエル）、Nozomi Networks（スイス）
+  - 米国: Palo Alto Networks Industrial、Cisco ISA、Rockwell ThinManager
+  - 中国: Huawei Industrial Firewall
+  - 日本: トレンドマイクロ TXOne Networks、NEC産業制御セキュリティ
 
 ## 汎用プラットフォーム型（General Platform-as-a-Service） {#sec-general-platform}
+
+:::{.callout-note appearance="simple"}
+## 📍 技術分類マトリックス上の位置
+
+| レイヤー＼特化度 | 汎用型 | 産業特化型 |
+|-----------------|--------|-----------|
+| **デバイス層** | 汎用デバイス連携型 | 産業特化統合型 |
+| **ネットワーク層** | 汎用通信インフラ型 | 産業通信統合型 |
+| **プラットフォーム層** | **👉 汎用プラットフォーム型** | 産業プラットフォーム型 |
+:::
 
 **概要**: 汎用クラウドエッジ機能を統合プラットフォームとして提供。業界非依存のアプリケーション開発・実行基盤として、標準化されたコンテナオーケストレーション、AI/ML、データ処理機能を統合
 
@@ -446,14 +560,41 @@ locale: locales-ja-JP.xml
 
 ### 代表的製品・サービス
 
-- **エッジクラウド**: Amazon Wavelength、Microsoft Azure Edge Zones、Google Cloud Distributed Cloud、NTTコミュニケーションズ Smart Data Platform、富士通 FUJITSU Cloud Service、日立製作所 Lumada、NECクラウド、ソフトバンク Enterprise Cloud
-- **ハイブリッドプラットフォーム**: Google Anthos、Red Hat OpenShift、VMware Tanzu、富士通 Hybrid IT Service、日立 JP1/Integrated Management、NEC Cloud Platform、東芝 GridDB Cloud、NTTデータ Enterprise Hybrid Cloud
-- **日本独自プラットフォーム**: さくらのクラウド、GMOクラウド、IIJクラウド、ニフクラ、IDCフロンティア、SCSK Cloud、TISクラウドサービス、CTC Enterprise Cloud
-- **コンテナプラットフォーム**: NTTコミュニケーションズ Container Service、富士通 Cloud Service for OSS、日立 uCosminexus Application Runtime、NECコンテナプラットフォーム、ソフトバンク Kubernetes Service
-- **AI/MLプラットフォーム**: 富士通 Zinrai、日立 Lumada Data Science Lab、NECエッジAI、東芝 RECAIUS、ソニー Neural Network Console、Preferred Networks PFN、リクルート A3RT
-- **オープンソース**: CNCF プロジェクト（Kubernetes、Prometheus等）、Apache Foundation、Cloud Native Computing Foundation Japan、Open Source Software Initiative Japan
+- **ハイブリッド・マルチクラウドプラットフォーム**:
+  - 米国: Google Anthos、Red Hat OpenShift、VMware Tanzu、HPE GreenLake
+  - 欧州: SUSE Rancher（独）、Canonical MicroK8s（英）
+  - 中国: Alibaba Cloud Hybrid、Huawei Cloud Stack、Tencent Cloud TCE
+  - 日本: 富士通Hybrid IT Service、日立JP1/Integrated Management、NEC Cloud Platform
+- **コンテナオーケストレーション**:
+  - 米国: Rancher (SUSE)、Platform9、D2iQ (旧Mesosphere)
+  - 欧州: Canonical Kubernetes（英）、SUSE CaaS Platform（独）
+  - 中国: Alibaba Container Service (ACK)、Tencent TKE、Huawei CCE
+  - 日本: NTTコミュニケーションズ Container Service、富士通Cloud Service for OSS、さくらのクラウド Kubernetes
+- **エッジAI/ML推論プラットフォーム**:
+  - 米国: AWS SageMaker Edge、Google Vertex AI、Microsoft Azure ML、NVIDIA AI Enterprise
+  - 欧州: SAP AI Core（独）
+  - 中国: Alibaba PAI、Baidu PaddlePaddle、Tencent TI Platform
+  - 日本: 富士通Zinrai、日立Lumada Data Science Lab、NECエッジAI、Preferred Networks PFN
+- **分散データ処理プラットフォーム**:
+  - 米国: Cloudera Data Platform、Databricks、Confluent (Kafka)
+  - 欧州: Ververica (Apache Flink)（独）
+  - 中国: Alibaba Realtime Compute、Tencent TBDS
+  - 日本: NTTデータ Enterprise Data Platform、日立Lumada DataOps
+- **オープンソース基盤**:
+  - グローバル: CNCF（Kubernetes、Prometheus、Envoy等）、Apache Foundation（Kafka、Flink等）、Linux Foundation
+  - 日本: Cloud Native Computing Foundation Japan、Open Source Software Initiative Japan
 
 ## 産業プラットフォーム型（Industry-Specific Platform-as-a-Service） {#sec-industrial-platform}
+
+:::{.callout-note appearance="simple"}
+## 📍 技術分類マトリックス上の位置
+
+| レイヤー＼特化度 | 汎用型 | 産業特化型 |
+|-----------------|--------|-----------|
+| **デバイス層** | 汎用デバイス連携型 | 産業特化統合型 |
+| **ネットワーク層** | 汎用通信インフラ型 | 産業通信統合型 |
+| **プラットフォーム層** | 汎用プラットフォーム型 | **👉 産業プラットフォーム型** |
+:::
 
 **概要**: 各産業分野の専門要件に特化したエッジプラットフォーム統合サービス。業界固有のビジネスプロセス、規制対応、安全要件に最適化されたプラットフォームを提供
 
