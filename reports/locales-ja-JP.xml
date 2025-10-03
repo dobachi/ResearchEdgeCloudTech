@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<locale xmlns="http://purl.org/net/xbiblio/csl" version="1.0" xml:lang="ja-JP">
+  <terms>
+    <term name="retrieved">参照元</term>
+    <term name="from"/>
+    <term name="accessed">アクセス日</term>
+    <term name="available at">入手先</term>
+  </terms>
+</locale>
