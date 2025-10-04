@@ -665,26 +665,26 @@ Kubernetesは、クラウドネイティブアプリケーションの標準的�
 
 - **ハイブリッド・マルチクラウドプラットフォーム**:
   - 米国: Google Anthos[@google_anthos]、Red Hat OpenShift[@redhat_openshift]、VMware Tanzu[@vmware_tanzu]、HPE GreenLake[@hpe_greenlake]
-  - 欧州: SUSE Rancher（独）[@suse_rancher]、Canonical MicroK8s（英）
-  - 中国: Alibaba Cloud Hybrid、Huawei Cloud Stack、Tencent Cloud TCE
+  - 欧州: SUSE Rancher（独）[@suse_rancher]、Canonical MicroK8s（英）[@canonical_microk8s]
+  - 中国: Alibaba Cloud Hybrid[@alibaba_cloud_hybrid]、Huawei Cloud Stack[@huawei_cloud_stack]、Tencent Cloud TCE[@tencent_cloud_tce]
   - 日本: 富士通Hybrid IT Service、日立JP1/Integrated Management、NEC Cloud Platform
 - **コンテナオーケストレーション**:
   - 米国: Rancher (SUSE)、Platform9、D2iQ (旧Mesosphere)
   - 欧州: Canonical Kubernetes（英）、SUSE CaaS Platform（独）
-  - 中国: Alibaba Container Service (ACK)、Tencent TKE、Huawei CCE
+  - 中国: Alibaba Container Service (ACK)[@alibaba_cloud_ack]、Tencent TKE[@tencent_cloud_tke]、Huawei CCE[@huawei_cloud_cce]
   - 日本: NTTコミュニケーションズ Container Service、富士通Cloud Service for OSS、さくらのクラウド Kubernetes
 - **エッジAI/ML推論プラットフォーム**:
-  - 米国: AWS SageMaker Edge[@aws_sagemaker_edge]、Google Vertex AI、Microsoft Azure ML[@azure_ml]、NVIDIA AI Enterprise
-  - 欧州: SAP AI Core（独）
+  - 米国: AWS SageMaker Edge[@aws_sagemaker_edge]、Google Vertex AI[@google_vertex_ai]、Microsoft Azure ML[@azure_ml]、NVIDIA AI Enterprise[@nvidia_ai_enterprise]
+  - 欧州: SAP AI Core（独）[@sap_ai_core]
   - 中国: Alibaba PAI、Baidu PaddlePaddle[@baidu_paddlepaddle]、Tencent TI Platform
-  - 日本: 富士通Zinrai、日立Lumada Data Science Lab、NECエッジAI、Preferred Networks PFN
+  - 日本: 富士通Zinrai[@fujitsu_zinrai]、日立Lumada Data Science Lab[@hitachi_lumada_data_science_lab]、NECエッジAI、Preferred Networks PFN
 - **分散データ処理プラットフォーム**:
   - 米国: Cloudera Data Platform[@cloudera]、Databricks[@databricks_platform]、Confluent (Kafka)[@confluent_kafka]
   - 欧州: Ververica (Apache Flink)（独）
   - 中国: Alibaba Realtime Compute、Tencent TBDS
   - 日本: NTTデータ Enterprise Data Platform、日立Lumada DataOps
 - **オープンソース基盤**:
-  - グローバル: CNCF（Kubernetes、Prometheus、Envoy等）、Apache Foundation（Kafka、Flink等）、Linux Foundation
+  - グローバル: CNCF[@cncf]（Kubernetes、Prometheus、Envoy等）、Apache Foundation[@apache_foundation]（Kafka、Flink等）、Linux Foundation[@linux_foundation]
   - 日本: Cloud Native Computing Foundation Japan、Open Source Software Initiative Japan
 
 ## 産業プラットフォーム型（Industry-Specific Platform-as-a-Service） {#sec-industrial-platform}
