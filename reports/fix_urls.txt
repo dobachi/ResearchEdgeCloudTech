@@ -1,0 +1,68 @@
+# URL修正リスト（cite_key|old_url|new_url|new_note）
+
+# Azure Edge Zones → Private MEC
+azure_edge_zones|https://azure.microsoft.com/en-us/products/edge-zones|https://azure.microsoft.com/en-us/solutions/private-multi-access-edge-compute-mec/|プライベートMECソリューション、超低遅延対応
+
+# Siemens製品群
+siemens_mindsphere|https://www.siemens.com/global/en/products/automation/topic-areas/industrial-edge-simatic-edge.html|https://www.siemens.com/global/en/products/automation/industrial-edge.html|産業用IoT・エッジコンピューティングプラットフォーム
+siemens_healthineers|https://www.siemens-healthineers.com/|https://www.siemens-healthineers.com/en-us|医療機器・診断システム、AI画像診断・医療IoT
+siemens_private_networks|https://www.siemens.com/global/en/products/automation/industrial-communication/private-networks.html|https://www.siemens.com/global/en/products/automation/industrial-communication.html|産業用通信ソリューション
+
+# Schneider Electric
+schneider_ecostruxure|https://www.se.com/ww/en/work/solutions/ecostruxure/|https://www.se.com/ww/en/work/campaign/innovation/platform.jsp|EcoStruxureプラットフォーム、産業・エネルギー・ビル管理統合
+
+# Cisco製品
+cisco_private_5g|https://www.cisco.com/site/us/en/solutions/private-5g/index.html|https://www.cisco.com/c/en/us/solutions/industries/manufacturing/private-5g.html|プライベート5Gソリューション
+cisco_industrial_ethernet|https://www.cisco.com/c/en/us/solutions/industries/manufacturing/industrial-ethernet.html|https://www.cisco.com/c/en/us/solutions/industries/manufacturing.html|産業用イーサネットソリューション
+
+# Dell, HP製品
+dell_edge_gateway|https://www.dell.com/en-us/dt/internet-of-things/edge-gateway.htm|https://www.dell.com/en-us/lp/internet-of-things|IoTエッジゲートウェイソリューション
+
+# AT&T, T-Mobile
+att_mec|https://www.att.com/business/solutions/att-multi-access-edge-computing/|https://www.att.com/business/solutions/5g/|5G MECソリューション
+tmobile_edge|https://www.t-mobile.com/business/solutions/5g-edge|https://www.t-mobile.com/business/solutions/advanced-network-solutions/5g|T-Mobile 5Gエッジソリューション
+
+# Huawei製品
+huawei_cloud_iot|https://www.huaweicloud.com/intl/en-us/product/iotplatform.html|https://www.huaweicloud.com/intl/en-us/product/iotda.html|IoTデバイスアクセスサービス
+huawei_ief|https://www.huaweicloud.com/intl/en-us/product/ief.html|https://www.huaweicloud.com/intl/en-us/product/ief/|Intelligent EdgeFabric
+
+# 日本企業
+kddi_edge|https://biz.kddi.com/service/edge-computing/|https://biz.kddi.com/service/5g/|5G/エッジコンピューティングサービス
+softbank_local5g|https://www.softbank.jp/biz/services/5g/local5g/|https://www.softbank.jp/biz/services/mobile/local5g/|ローカル5G・MECサービス
+kubota_ksas|https://www.kubota.co.jp/product/march/ksas/|https://ksas.kubota.co.jp/|営農支援システムKSAS
+kyocera_iot|https://www.kyocera.co.jp/icd/ja/product/module/|https://www.kyocera.co.jp/prdct/telecom/|通信機器・IoTモジュール
+kajima_a4csel|https://www.kajima.co.jp/tech/a4csel/|https://www.kajima.co.jp/tech/|建設DX技術・A4CSEL
+obayashi_bim|https://www.obayashi.co.jp/technology/bim.html|https://www.obayashi.co.jp/technology/|建設技術・BIM/CIM
+shimadzu_clairvivo|https://www.shimadzu.co.jp/products/medical/clairvivo.html|https://www.shimadzu.co.jp/products/medical/|医用画像情報システム
+
+# Qualcomm
+qualcomm_private_networks|https://www.qualcomm.com/products/technology/5g/private-networks|https://www.qualcomm.com/products/technology/5g|5G技術・プライベートネットワーク
+
+# Vodafone, Deutsche Telekom
+vodafone_edge|https://www.vodafone.com/business/iot/managed-iot-connectivity-platform|https://www.vodafone.com/business/iot|IoT接続プラットフォーム・エッジサービス
+deutsche_telekom_mec|https://geschaeftskunden.telekom.de/digitale-loesungen/edge-cloud|https://geschaeftskunden.telekom.de/digitalisierung|エッジクラウド・デジタルソリューション
+deutsche_telekom_edge_cloud|https://geschaeftskunden.telekom.de/digitale-loesungen/edge-cloud|https://geschaeftskunden.telekom.de/digitalisierung|エッジクラウドプラットフォーム
+
+# TomTom
+tomtom_telematics|https://www.tomtom.com/products/fleet-management/|https://www.tomtom.com/products/geolocation/|テレマティクス・位置情報サービス
+
+# Inspur
+inspur_edge|https://www.inspur.com/en/products/edge-computing|https://www.inspur.com/en/|エッジコンピューティングソリューション
+
+# Philips
+philips_healthsuite|https://www.philips.com/a-w/about/innovation/healthsuite-digital-platform.html|https://www.philips.com/a-w/about/innovation/health-technology.html|ヘルスケアデジタルプラットフォーム
+
+# Palo Alto
+palo_alto_industrial|https://www.paloaltonetworks.com/solutions/industrial-iot-security|https://www.paloaltonetworks.com/solutions/industrial-security|産業IoT・OTセキュリティ
+
+# Medtronic
+medtronic_carelink|https://www.medtronic.com/us-en/patients/treatments-therapies/remote-monitoring-carelink.html|https://www.medtronic.com/us-en/patients/treatments-therapies/cardiac-rhythm-disease/your-heart-device/remote-monitoring.html|遠隔患者モニタリング
+
+# Midea
+midea_iot|https://www.midea.com/global/about-midea/technology|https://www.midea.com/global/about-midea|M.IoTプラットフォーム
+
+# Kapsch
+kapsch_trafficcom|https://www.kapsch.net/ktc|https://www.kapsch.net/|交通管制システム・ITS
+
+# Advantech
+advantech_ark|https://www.advantech.com/products/embedded-box-computer/sub_embedded-box-pc|https://www.advantech.com/en/products/industrial-automation-systems/industrial-computers|産業用組込みボックスPC
