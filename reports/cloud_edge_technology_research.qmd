@@ -677,7 +677,7 @@ Kubernetesは、クラウドネイティブアプリケーションの標準的�
   - 米国: AWS SageMaker Edge[@aws_sagemaker_edge]、Google Vertex AI[@google_vertex_ai]、Microsoft Azure ML[@azure_ml]、NVIDIA AI Enterprise[@nvidia_ai_enterprise]
   - 欧州: SAP AI Core（独）[@sap_ai_core]
   - 中国: Alibaba PAI、Baidu PaddlePaddle[@baidu_paddlepaddle]、Tencent TI Platform
-  - 日本: 富士通Zinrai[@fujitsu_zinrai]、日立Lumada Data Science Lab[@hitachi_lumada_data_science_lab]、NECエッジAI、Preferred Networks PFN
+  - 日本: 富士通AI[@fujitsu_ai]、日立Lumada Data Science Lab[@hitachi_lumada_data_science_lab]、NECエッジAI、Preferred Networks PFN
 - **分散データ処理プラットフォーム**:
   - 米国: Cloudera Data Platform[@cloudera]、Databricks[@databricks_platform]、Confluent (Kafka)[@confluent_kafka]
   - 欧州: Ververica (Apache Flink)（独）
