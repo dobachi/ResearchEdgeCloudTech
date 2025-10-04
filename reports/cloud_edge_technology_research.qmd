@@ -357,8 +357,8 @@ locale: locales-ja-JP.xml
 - **建設・インフラ**:
   - 欧州: Bentley iTwin（英）[@bentley_itwin]、Trimble Connect（米/欧）[@trimble_connect]
   - 米国: Autodesk BIM 360[@autodesk_bim360]、Procore[@procore]、Oracle Aconex[@oracle_aconex]
-  - 中国: Glodon[@glodon]、China State Construction Digital Platform[@china_construction]
-  - 日本: 大林組BIM/CIM[@obayashi_bim]、鹿島建設A4CSEL[@kajima_a4csel]、清水建設Shimz Smart Site[@shimizu_smart_site]
+  - 中国: Glodon[@glodon_platform]、China State Construction Digital Platform[@china_construction]
+  - 日本: 大林組BIM/CIM[@obayashi_bim]、鹿島建設A4CSEL[@kajima_a4csel]、清水建設Shimz Smart Site[@shimizu_shimz_smart]
 
 ## 汎用通信インフラ型（General Communication Infrastructure） {#sec-general-comm}
 
@@ -417,10 +417,10 @@ locale: locales-ja-JP.xml
 - **エッジクラウド**:
   - 米国: Amazon Wavelength[@aws_wavelength]、Microsoft Azure Edge Zones[@azure_edge_zones]、Google Cloud Distributed Cloud[@google_distributed_cloud]、IBM Edge Application Manager[@ibm_edge]
   - 欧州: Vodafone Edge Cloud[@vodafone_edge]、Deutsche Telekom MEC[@deutsche_telekom_mec]、Orange Edge Computing[@orange_edge]
-  - 中国: Alibaba Cloud ENS[@alibaba_ens]、Huawei Cloud IEF[@huawei_ief]、Tencent Edge Zone[@tencent_edge_zone]
+  - 中国: Alibaba Cloud ENS[@alibaba_cloud_ens]、Huawei Cloud IEF[@huawei_ief]、Tencent Edge Zone[@tencent_edge_zone]
   - 日本: NTTコミュニケーションズ Flexible InterConnect、富士通FUJITSU Cloud Service、日立Lumada[@hitachi_lumada]
 - **CDN**:
-  - 米国: Amazon CloudFront[@cloudfront]、Cloudflare[@cloudflare]、Fastly[@fastly]、Akamai[@akamai]
+  - 米国: Amazon CloudFront[@cloudfront]、Cloudflare[@cloudflare_cdn]、Fastly[@fastly]、Akamai[@akamai_cdn]
   - 欧州: Limelight Networks[@limelight]、CDN77（チェコ）[@cdn77]
   - 中国: Alibaba Cloud CDN、Tencent Cloud CDN、ChinaCache[@chinacache]
   - 日本: IIJ CDN、NTTコミュニケーションズ Arcstar Universal One、KDDI Web Communications
@@ -485,12 +485,12 @@ locale: locales-ja-JP.xml
 
 - **ローカル5G/プライベート通信**:
   - 欧州: Nokia Industrial 5G[@nokia_industrial_5g]、Ericsson Private 5G[@ericsson_private_5g]、Siemens Private Networks[@siemens_private_networks]
-  - 米国: Qualcomm Private Networks[@qualcomm_private_5g]、Cisco Private 5G[@cisco_private_5g]、Celona[@celona]
-  - 中国: Huawei Industrial 5G、ZTE Private 5G[@zte_private_5g]、China Mobile Industries
+  - 米国: Qualcomm Private Networks[@qualcomm_private_networks]、Cisco Private 5G[@cisco_private_5g]、Celona[@celona]
+  - 中国: Huawei Industrial 5G[@huawei_industrial_5g]、ZTE Private 5G[@zte_private_5g]、China Mobile Industries
   - 日本: NEC産業用5G、富士通ローカル5G、NTTドコモローカル5G[@ntt_docomo_mec]
 - **産業用通信・ネットワーク**:
   - 欧州: Siemens SCALANCE[@siemens_scalance]、Hirschmann Industrial Networking[@hirschmann]、Phoenix Contact[@phoenix_contact]、Beckhoff EtherCAT[@beckhoff_ethercat]
-  - 米国: Cisco Industrial Ethernet[@cisco_industrial_ethernet]、Rockwell Automation Stratix、Moxa Industrial Networking[@moxa]
+  - 米国: Cisco Industrial Ethernet[@cisco_industrial_ethernet]、Rockwell Automation Stratix、Moxa Industrial Networking[@moxa_industrial]
   - 中国: Huawei Industrial Switch、H3C Industrial Network[@h3c]
   - 日本: SORACOM Arc[@soracom_arc]、オムロンSYSMAC、三菱電機CC-Link
 - **TSN・確定的通信**:
@@ -625,7 +625,7 @@ locale: locales-ja-JP.xml
 - **エネルギー**: Schneider Electric EcoStruxure[@schneider_ecostruxure]、ABB Ability[@abb_ability]、東京ガス IoTプラットフォーム、東京電力TEPCO Energy Partner、関西電力 HEMSサービス、中部電力 カテエネ、九州電力 キューデン・エコソル、三菱電機 Energy Cloud、NECエネルギークラウド、日立製作所Lumada Energy[@hitachi_lumada]、富士通 エネルギーマネジメントソリューション、東芝エネルギーシステムズ EMS、オムロンエネルギーマネジメント、パナソニック エネルギー統合システム
 - **農業**: John Deere Operations Center[@john_deere_operations]、Climate FieldView[@climate_fieldview]、NTTコムウェア農業クラウド、クボタ KSAS（営農支援システム）[@kubota_ksas]、ヤンマー スマートアシスト[@yanmar_smart_assist]、ソフトバンク e-kakashi、富士通 Akisai（秋菜）、日立製作所 農業IoTソリューション[@hitachi_lumada]、パナソニック アグリテックソリューション、NEC 農業ICTソリューション、WAGRI農業データ連携基盤[@wagri_platform]、イノチオアグリ 統合環境制御システム、井関農機 夢ある農業総合支援、三菱マヒンドラ農機 営農支援、トヨタ 豊作計画
 - **医療**: Epic Systems、Cerner HealtheLife、富士通 HOPE LifeMark-HX[@fujitsu_hope]、オリンパス 内視鏡統合システム、テルモ 医療機器統合管理、島津製作所 医用画像統合システム[@shimadzu_clairvivo]、日立製作所 医療IoTソリューション[@hitachi_lumada]、NEC 医療情報統合基盤、東芝 医用画像情報システム、富士フイルム SYNAPSE、キヤノンメディカル Vitrea、シスメックス 検査統合システム、PHC 電子カルテシステム、ソフトバンク 遠隔医療プラットフォーム、パナソニック ヘルスケアソリューション
-- **建設・インフラ**: Bentley iTwin[@bentley_itwin]、Autodesk Construction Cloud[@autodesk_bim360]、NTTコムウェア Smart World、大林組 建設DXプラットフォーム[@obayashi_bim]、鹿島建設 A4CSEL[@kajima_a4csel]、竹中工務店 ADVANCE、清水建設 Shimz Smart Site[@shimizu_smart_site]、大成建設 T-iROBO®、日立製作所 社会インフラ統合ソリューション[@hitachi_lumada]、三菱電機 ビル管理統合システム、東芝インフラシステムズ 統合監視システム、富士通 公共インフラソリューション、NEC 社会インフラソリューション、パナソニック スマートシティソリューション、コマツ スマートコンストラクション
+- **建設・インフラ**: Bentley iTwin[@bentley_itwin]、Autodesk Construction Cloud[@autodesk_bim360]、NTTコムウェア Smart World、大林組 建設DXプラットフォーム[@obayashi_bim]、鹿島建設 A4CSEL[@kajima_a4csel]、竹中工務店 ADVANCE、清水建設 Shimz Smart Site[@shimizu_shimz_smart]、大成建設 T-iROBO®、日立製作所 社会インフラ統合ソリューション[@hitachi_lumada]、三菱電機 ビル管理統合システム、東芝インフラシステムズ 統合監視システム、富士通 公共インフラソリューション、NEC 社会インフラソリューション、パナソニック スマートシティソリューション、コマツ スマートコンストラクション
 
 ## 技術間の相互関係
 
@@ -1689,7 +1689,7 @@ locale: locales-ja-JP.xml
 
 **主要な政策フレームワーク**:
 
-欧州委員会は「2030 Digital Compass」において、2つの定量目標を設定している[@ec2025cloud_edge]：
+欧州委員会は「2030 Digital Compass」[@ec2024digital_decade]において、2つの定量目標を設定している[@ec2025cloud_edge]：
 
 1. **75%の企業がクラウドを採用**（2030年まで）
 2. **10,000基の気候中立で高度にセキュアなエッジノードを展開**（2030年まで）
@@ -1698,7 +1698,7 @@ locale: locales-ja-JP.xml
 
 **主要イニシアティブ**:
 
-- **GAIA-X**: 2020年6月に正式発足した欧州統合データ基盤プロジェクト。ドイツ・フランス主導で米国・中国のクラウド企業への依存低減を目指す。複数のライトハウスプロジェクトが進展しており、特に自動車分野のCatena-Xは2023年10月に本格稼働し、2025年にはリコール精度向上（当初140万台→実際14台）やPCF（製品カーボンフットプリント）追跡などで具体的成果を達成[@gaiax2025lighthouse][@nttdata2024gaiax]。製造業（EuProGigant）、モビリティ（Gaia-X 4 Future Mobility）、エネルギー（OMEGA-X）、ヘルスケア（Dataspace4Health）でも約30プロバイダーが2025年までにサービス提供予定[@gaiax2025lighthouse]。一方で、過度な官僚主義による実装遅延も指摘されており[@theregister2024gaiax]、農業分野のAgdatahubは2024年12月に清算[@eurostack2025gaiax]。GAIA-Xは、成功プロジェクト（Catena-X等）と失敗事例（Agdatahub）の両面から、産業特化型データスペースの有効性と、明確なビジネスモデル・実装重視の重要性を示す教訓を提供
+- **GAIA-X**: 2020年6月に正式発足した欧州統合データ基盤プロジェクト[@gaiax2024architecture]。ドイツ・フランス主導で米国・中国のクラウド企業への依存低減を目指す。複数のライトハウスプロジェクトが進展しており、特に自動車分野のCatena-Xは2023年10月に本格稼働し、2025年にはリコール精度向上（当初140万台→実際14台）やPCF（製品カーボンフットプリント）追跡などで具体的成果を達成[@gaiax2025lighthouse][@nttdata2024gaiax]。製造業（EuProGigant）、モビリティ（Gaia-X 4 Future Mobility）、エネルギー（OMEGA-X）、ヘルスケア（Dataspace4Health）でも約30プロバイダーが2025年までにサービス提供予定[@gaiax2025lighthouse]。一方で、過度な官僚主義による実装遅延も指摘されており[@theregister2024gaiax]、農業分野のAgdatahubは2024年12月に清算[@eurostack2025gaiax]。GAIA-Xは、成功プロジェクト（Catena-X等）と失敗事例（Agdatahub）の両面から、産業特化型データスペースの有効性と、明確なビジネスモデル・実装重視の重要性を示す教訓を提供
 
 - **IPCEI（Important Project of Common European Interest）**: 次世代クラウドインフラ・サービスに関する欧州共通利益重要プロジェクト。複数プロバイダー間の相互運用可能で、セキュアかつエネルギー効率の高いクラウド・エッジソリューションの研究開発と初期産業展開を支援[@ec2023ipcei]
 
