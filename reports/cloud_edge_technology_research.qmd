@@ -284,6 +284,7 @@ locale: locales-ja-JP.xml
 **対象産業分野**: 製造業（FA、MES、デジタルファクトリー）、交通・運輸業（V2X、MaaS）、エネルギー業（SCADA、スマートグリッド）、農業（精密農業、WAGRI）、医療（遠隔医療、AI画像診断）、建設・インフラ（BIM/CIM、i-Construction）
 
 **主要技術領域**:
+
 - **OT/ITコンバージェンス**: 産業用プロトコル統合（OPC-UA、Modbus）、PLC/DCS統合、予知保全、デジタルツイン
 - **産業データスペース**: Manufacturing-X、モビリティデータスペース（MDS）、Energy Data Space、Agricultural Data Space、European Health Data Space
 - **産業IoTプラットフォーム**: 製造業（Siemens MindSphere、日立Lumada）、交通（HERE Technologies、トヨタコネクティッド）、エネルギー（ABB Ability、東芝）、農業（John Deere、WAGRI）、医療（Philips HealthSuite、富士通HOPE）、建設（Bentley iTwin、大林組BIM/CIM）
