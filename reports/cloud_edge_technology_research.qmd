@@ -1951,15 +1951,11 @@ Kubernetesは、クラウドネイティブアプリケーションの標準的�
 - グローバル: CNCF[@cncf]（Kubernetes、Prometheus、Envoy等）、Apache Foundation[@apache_foundation]（Kafka、Flink等）、Linux Foundation[@linux_foundation]
 - 日本: Cloud Native Computing Foundation Japan、Open Source Software Initiative Japan
 
-### コンテナ技術とオーケストレーション
+### 市場動向と技術スタック
 
-**Kubernetes Edge**:
+**汎用プラットフォーム技術スタック**:
 
-- エッジ環境でのコンテナオーケストレーション
-- K3s、MicroK8s等の軽量実装
-- エッジクラスター管理の自動化
-
-**技術スタック**:
+エッジ環境での汎用プラットフォーム構築には、以下の技術レイヤーが統合される。
 
 | レイヤー | 技術（例） | 機能 |
 |---------|------|------|
@@ -1970,39 +1966,17 @@ Kubernetesは、クラウドネイティブアプリケーションの標準的�
 
 : 汎用プラットフォーム技術スタック（例示） {#tbl-platform-stack}
 
-### エッジAIプラットフォーム
+**Kubernetes Edgeの普及**: K3s、MicroK8s等の軽量実装により、エッジ環境でのコンテナオーケストレーションが実用段階に入っている。エッジクラスター管理の自動化により、数千～数万のエッジサイトを集中管理できる。
 
-**推論エンジン**:
+**エッジAI推論エンジンの成熟**: TensorFlow Lite（Google）、ONNX Runtime（Microsoft）、OpenVINO（Intel）が軽量ML推論のデファクトスタンダードとなっている。フェデレーテッドラーニング（FedML、TensorFlow Federated）やプライバシー保護機械学習（PySyft）により、分散学習の実用化が進んでいる。
 
-- TensorFlow Lite：Googleによる軽量ML
-- ONNX Runtime：Microsoftによるクロスプラットフォーム
-- OpenVINO：Intelによる推論最適化
+**クラウドプロバイダーのエッジ戦略**:
 
-**学習フレームワーク**:
+主要クラウドプロバイダーは、エッジコンピューティングを戦略的重点領域と位置づけ、5G統合、エッジAI、IoT管理を統合したプラットフォームを提供している。
 
-- FedML：フェデレーテッドラーニング
-- TensorFlow Federated：分散学習
-- PySyft：プライバシー保護機械学習
-
-### クラウドプロバイダーの戦略
-
-**Amazon Web Services**:
-
-- AWS Wavelength：5G統合エッジコンピューティング
-- AWS IoT Greengrass：エッジデバイス管理
-- Amazon SageMaker Edge：エッジAI推論
-
-**Microsoft Azure**:
-
-- Azure Edge Zones：エッジクラウド基盤
-- Azure IoT Edge：エッジランタイム
-- Azure Cognitive Services：エッジAI
-
-**Google Cloud**:
-
-- Google Anthos：ハイブリッド・マルチクラウド
-- Cloud IoT Edge：エッジAI推論
-- Edge TPU：専用AIチップ
+- **Amazon Web Services**: AWS Wavelength（5G統合エッジ）、AWS IoT Greengrass（エッジデバイス管理）、Amazon SageMaker Edge（エッジAI推論）を統合し、通信事業者との連携を強化
+- **Microsoft Azure**: Azure Edge Zones（エッジクラウド基盤）、Azure IoT Edge（エッジランタイム）、Azure Cognitive Services（エッジAI）により、エンタープライズ向けエッジソリューションを展開
+- **Google Cloud**: Google Anthos（ハイブリッド・マルチクラウド）、Cloud IoT Edge（エッジAI推論）、Edge TPU（専用AIチップ）により、エッジとクラウドのシームレスな統合を実現
 
 ## 産業プラットフォーム型技術（産業特化プラットフォーム）
 
@@ -2071,19 +2045,11 @@ Kubernetesは、クラウドネイティブアプリケーションの標準的�
 
 **建設・インフラ**: Bentley iTwin[@bentley_itwin]、Autodesk Construction Cloud[@autodesk_bim360]、NTTコムウェア Smart World、大林組 建設DXプラットフォーム[@obayashi_bim]、鹿島建設 A4CSEL[@kajima_a4csel]、竹中工務店 ADVANCE、清水建設 Shimz Smart Site[@shimizu_shimz_smart]、大成建設 T-iROBO®、日立製作所 社会インフラ統合ソリューション[@hitachi_lumada]、三菱電機 ビル管理統合システム、東芝インフラシステムズ 統合監視システム、富士通 公共インフラソリューション、NEC 社会インフラソリューション、パナソニック スマートシティソリューション、コマツ スマートコンストラクション
 
-### 製造業特化エッジプラットフォーム
+### 市場動向と技術スタック
 
-**産業用クラウドプラットフォーム**:
+**製造業特化エッジプラットフォームの構成**:
 
-- 製造実行システム（MES）統合
-- 品質管理・トレーサビリティ
-- 予知保全・設備稼働最適化
-
-**OT/ITデータ統合基盤**:
-
-- 産業用データレイク構築
-- リアルタイム生産データ分析
-- AI/ML Pipelineの産業適用
+産業用クラウドプラットフォームは、製造実行システム（MES）統合、品質管理・トレーサビリティ、予知保全・設備稼働最適化を実現する。OT/ITデータ統合基盤により、産業用データレイク構築、リアルタイム生産データ分析、AI/ML Pipelineの産業適用が可能になる。
 
 **技術スタック比較**:
 
@@ -2096,7 +2062,7 @@ Kubernetesは、クラウドネイティブアプリケーションの標準的�
 
 : 汎用型vs産業特化型技術スタック比較 {#tbl-platform-comparison}
 
-### 日本の産業プラットフォーム
+**日本の産業プラットフォーム
 
 **主要ベンダー**:
 
