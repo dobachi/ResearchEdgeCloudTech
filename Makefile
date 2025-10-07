@@ -20,6 +20,7 @@ help: ## このヘルプメッセージを表示
 	@echo "  make html      # HTML版を生成"
 	@echo "  make pdf       # PDF版を生成"
 	@echo "  make all       # 全形式を生成"
+	@echo "  make package   # 共有用パッケージ（ZIP）を生成"
 	@echo "  make serve     # 開発サーバー起動（継続ビルド+Webサーバー）"
 	@echo "  make preview   # Quartoプレビューサーバー起動"
 	@echo "  make watch     # 自動ビルド監視のみ"
@@ -133,6 +134,7 @@ clean: ## 生成ファイルを削除
 	@echo "🧹 生成ファイルをクリーンアップ中..."
 	@rm -rf $(REPORTS_DIR)/_book/
 	@rm -rf $(REPORTS_DIR)/*_files/
+	@rm -rf $(OUTPUT_DIR)/package/
 	@rm -f /tmp/quarto-build.log
 	@rm -f /tmp/quarto-build.lock
 	@echo "✅ クリーンアップ完了"
@@ -184,6 +186,62 @@ pages: html ## GitHub Pages用にビルド
 	@echo "🌐 GitHub Pages用にビルド中..."
 	@cp -r $(OUTPUT_DIR)/html/* $(OUTPUT_DIR)/ 2>/dev/null || true
 	@echo "✅ GitHub Pages用ビルド完了"
+
+# 共有用パッケージ生成
+.PHONY: package
+package: all ## 共有用パッケージを生成（HTML/PDF/EPUB/ソース/参考文献）
+	@echo "📦 共有用パッケージを生成中..."
+	@mkdir -p $(OUTPUT_DIR)/package
+	@VERSION=$$(git describe --tags --always 2>/dev/null || echo "latest"); \
+	DATE=$$(date +%Y%m%d); \
+	PACKAGE_NAME="cloud-edge-report-$$VERSION-$$DATE"; \
+	PACKAGE_DIR="$(OUTPUT_DIR)/package/$$PACKAGE_NAME"; \
+	echo "📁 パッケージ名: $$PACKAGE_NAME"; \
+	rm -rf $$PACKAGE_DIR; \
+	mkdir -p $$PACKAGE_DIR/html; \
+	mkdir -p $$PACKAGE_DIR/source; \
+	echo "📄 ファイルをコピー中..."; \
+	cp -r $(REPORTS_DIR)/_book/*.html $$PACKAGE_DIR/html/ 2>/dev/null || true; \
+	cp -r $(REPORTS_DIR)/_book/*_files $$PACKAGE_DIR/html/ 2>/dev/null || true; \
+	cp -r $(REPORTS_DIR)/_book/images $$PACKAGE_DIR/html/ 2>/dev/null || true; \
+	cp $(REPORTS_DIR)/_book/*.pdf $$PACKAGE_DIR/ 2>/dev/null || echo "⚠️  PDF未生成"; \
+	cp $(REPORTS_DIR)/_book/*.epub $$PACKAGE_DIR/ 2>/dev/null || echo "⚠️  EPUB未生成"; \
+	cp $(REPORTS_DIR)/*.qmd $$PACKAGE_DIR/source/ 2>/dev/null || true; \
+	cp $(REPORTS_DIR)/references.bib $$PACKAGE_DIR/source/ 2>/dev/null || true; \
+	cp $(REPORTS_DIR)/_quarto.yml $$PACKAGE_DIR/source/ 2>/dev/null || true; \
+	echo "📝 README.txtを生成中..."; \
+	echo "クラウドエッジ技術調査報告書 - 共有パッケージ" > $$PACKAGE_DIR/README.txt; \
+	echo "" >> $$PACKAGE_DIR/README.txt; \
+	echo "バージョン: $$VERSION" >> $$PACKAGE_DIR/README.txt; \
+	echo "生成日: $$(date '+%Y-%m-%d %H:%M:%S')" >> $$PACKAGE_DIR/README.txt; \
+	echo "" >> $$PACKAGE_DIR/README.txt; \
+	echo "【パッケージ内容】" >> $$PACKAGE_DIR/README.txt; \
+	echo "- html/           : HTML版レポート" >> $$PACKAGE_DIR/README.txt; \
+	echo "- *.pdf           : PDF版レポート" >> $$PACKAGE_DIR/README.txt; \
+	echo "- *.epub          : EPUB版レポート" >> $$PACKAGE_DIR/README.txt; \
+	echo "- source/         : ソースファイル（Quarto .qmd、参考文献.bib）" >> $$PACKAGE_DIR/README.txt; \
+	echo "" >> $$PACKAGE_DIR/README.txt; \
+	echo "【閲覧方法】" >> $$PACKAGE_DIR/README.txt; \
+	echo "- HTML版: html/index.html をブラウザで開く" >> $$PACKAGE_DIR/README.txt; \
+	echo "- PDF版 : *.pdf をPDFリーダーで開く" >> $$PACKAGE_DIR/README.txt; \
+	echo "- EPUB版: *.epub をEPUBリーダーで開く" >> $$PACKAGE_DIR/README.txt; \
+	echo "" >> $$PACKAGE_DIR/README.txt; \
+	echo "【ライセンス】" >> $$PACKAGE_DIR/README.txt; \
+	echo "本レポートの利用条件については、ソース内のライセンス表記を参照してください。" >> $$PACKAGE_DIR/README.txt; \
+	echo "" >> $$PACKAGE_DIR/README.txt; \
+	echo "リポジトリ: https://github.com/dobachi/ResearchEdgeCloudTech" >> $$PACKAGE_DIR/README.txt; \
+	echo "🗜️  ZIP圧縮中..."; \
+	cd $(OUTPUT_DIR)/package && zip -r $$PACKAGE_NAME.zip $$PACKAGE_NAME >/dev/null; \
+	PACKAGE_SIZE=$$(du -sh $(OUTPUT_DIR)/package/$$PACKAGE_NAME.zip | cut -f1); \
+	echo "✅ パッケージ生成完了"; \
+	echo ""; \
+	echo "📦 パッケージ情報:"; \
+	echo "  ファイル名: $$PACKAGE_NAME.zip"; \
+	echo "  サイズ    : $$PACKAGE_SIZE"; \
+	echo "  出力先    : $(OUTPUT_DIR)/package/$$PACKAGE_NAME.zip"; \
+	echo ""; \
+	echo "内容:"; \
+	cd $(OUTPUT_DIR)/package && unzip -l $$PACKAGE_NAME.zip | head -20
 
 # 依存関係インストール（Ubuntu/Debian）
 .PHONY: install-deps
